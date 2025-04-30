@@ -1,0 +1,65 @@
+.base {
+    -fx-background-color: #eaeaea
+}
+
+.side_ankerpane {
+    -fx-background-color: linear-gradient(to bottom right, #421d01, #bf6000);
+    /*background-image: linear-gradient(to bottom right, #421d01, #542603);*/
+    -fx-border-width: 2px 2px 2px 2px;
+    -fx-border-radius: 15px;
+    -fx-background-radius: 15px;
+    -fx-border-style: solid;
+}
+
+.inner_pane {
+    -fx-background-color: #F2B680;
+    -fx-border-color: #F2B680;
+    -fx-border-width: 2px 2px 2px 2px;
+    -fx-border-radius: 25px;
+    -fx-background-radius: 25px;
+    -fx-border-style: solid;
+}
+
+.pane_list_1 {
+    -fx-background-color: linear-gradient(to right, #995701, f2820c);
+    -fx-border-width: 2px 2px 2px 2px;
+    -fx-background-radius: 25px;
+}
+
+.content_pane {
+    -fx-background-color: linear-gradient(to right, #ffffff, #ffebce);
+    -fx-border-width: 2px 2px 2px 2px;
+    -fx-background-radius: 25px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.4), 10, 0, 0, 0);
+}
+
+.btn {
+    -fx-background-color: linear-gradient(to top, #bf6000, #F2B680);
+    -fx-background-radius: 10px;
+    -fx-border-color: black;
+    -fx-border-width: 1px;
+    -fx-border-radius: 5px;
+}
+
+.btn:hover {
+    -fx-effect: dropshadow(gaussian, rgba(255,255,255,0.3), 10, 0.5, 0.0, 0.0);
+}
+
+.btn_active {
+    -fx-background-color: linear-gradient(to bottom, #bf6000, #F2B680);
+    -fx-background-radius: 10px;
+    -fx-border-color: black;
+    -fx-border-width: 1px;
+    -fx-border-radius: 5px;
+    -fx-effect: innershadow(gaussian, rgba(0,0,0,0.5), 100, 0, 5, 5);
+}
+
+.hidden_btn {
+    -fx-background-color: transparent;
+}
+
+.image {
+    -fx-background-radius: 25px;
+    -fx-border-color: black;
+    -fx-border-width: 5px;
+}
