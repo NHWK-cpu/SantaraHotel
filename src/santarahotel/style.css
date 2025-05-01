@@ -26,6 +26,12 @@
     -fx-background-radius: 25px;
 }
 
+.pane_list_2 {
+    -fx-background-color: linear-gradient(to left, #995701, f2820c);
+    -fx-border-width: 2px 2px 2px 2px;
+    -fx-background-radius: 25px;
+}
+
 .content_pane {
     -fx-background-color: linear-gradient(to right, #ffffff, #ffebce);
     -fx-border-width: 2px 2px 2px 2px;

@@ -24,6 +24,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
 public class SceneController {
@@ -278,6 +279,177 @@ public class SceneController {
         textField_tanggalCheckIn.setText("");
         textField_tanggalCheckOut.setText("");
         harga = 0;
+    }
+    
+    
+//    Method untuk mencari data pesanan customer
+    
+     @FXML
+    private Pane pane_search_id_field;
+
+    @FXML
+    private Pane pane_search_name_field;
+
+
+    @FXML
+    private Pane pane_searched;
+    
+    @FXML
+    private TextField textField_searchIndex_id;
+
+    @FXML
+    private TextField textField_searchIndex_nama;
+
+    @FXML
+    private TextField textField_searchIndex_nomorKependudukan;
+    
+    @FXML
+    private Label label_cekPesanan_harga;
+
+    @FXML
+    private Label label_cekPesanan_id;
+
+    @FXML
+    private Label label_cekPesanan_jenisKamar;
+
+    @FXML
+    private Label label_cekPesanan_nama;
+
+    @FXML
+    private Label label_cekPesanan_nomorKamar;
+
+    @FXML
+    private Label label_cekPesanan_statusPesanan;
+
+    @FXML
+    private Label label_cekPesanan_tanggalCheckIn;
+
+    @FXML
+    private Label label_cekPesanan_tanggalCheckOut;
+    
+    @FXML
+    private TextField textField_searchIndex_tanggalCheckIn;
+
+    
+    public void SearchByID(ActionEvent event) {
+        
+        alertMessage alert = new alertMessage();
+        
+        if (textField_searchIndex_id.getText().isEmpty()) {
+            alert.errorMessage("Tolong isi kolom yang disediakan");
+            return;
+        }
+        
+        String selectData = "SELECT * FROM `customer` WHERE id_pesanan = ?";
+        
+        connect = ConnectionDB.ConnectDb();
+        
+        
+        try {
+            
+            prepare = connect.prepareStatement(selectData);
+            prepare.setString(1, textField_searchIndex_id.getText());
+            
+            result = prepare.executeQuery();
+            
+            if (result.next()) {
+                alert.successMessage("Data ditemukan!");
+                label_cekPesanan_nama.setText(result.getString("nama"));
+                label_cekPesanan_id.setText(result.getString("id_pesanan"));
+                label_cekPesanan_jenisKamar.setText(result.getString("tipe_kamar"));
+                label_cekPesanan_nomorKamar.setText(result.getString("nomor_kamar"));
+                label_cekPesanan_tanggalCheckIn.setText(result.getString("tanggal_check_in"));
+                label_cekPesanan_tanggalCheckOut.setText(result.getString("tanggal_check_out"));
+                label_cekPesanan_statusPesanan.setText(result.getString("status"));
+                label_cekPesanan_harga.setText("Rp. " + stringFormatterSeparator.format(Integer.parseInt(result.getString("harga"))).replace(",", ".") + ".000");
+            } else {
+                alert.errorMessage("Data tidak ditemukan");
+                
+                return;
+            }
+            
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        
+        pane_search_id_field.setDisable(true);
+        pane_search_id_field.setVisible(false);
+        
+        pane_searched.setDisable(false);
+        pane_searched.setVisible(true);
+    }
+    
+    public void SearchByName() {
+        
+        alertMessage alert = new alertMessage();
+
+        if(textField_searchIndex_nama.getText().isEmpty() || textField_searchIndex_nomorKependudukan.getText().isEmpty() || textField_searchIndex_tanggalCheckIn.getText().isEmpty()) {
+            alert.errorMessage("Tolong isi semua kolom yang disediakan");
+            return;
+        }
+        
+        String selectData = "SELECT * FROM `customer` WHERE nama = ? AND nomor_kependudukan = ? AND tanggal_check_in = ?";
+        
+        connect = ConnectionDB.ConnectDb();
+        
+        
+        try {
+            
+            prepare = connect.prepareStatement(selectData);
+            prepare.setString(1, textField_searchIndex_nama.getText());
+            prepare.setString(2, textField_searchIndex_nomorKependudukan.getText());
+            prepare.setString(3, textField_searchIndex_tanggalCheckIn.getText() + " 00:00:00");
+            
+            result = prepare.executeQuery();
+            
+            if (result.next()) {
+                alert.successMessage("Data ditemukan!");
+                label_cekPesanan_nama.setText(String.format("%.12s", result.getString("nama")));
+                label_cekPesanan_id.setText(result.getString("id_pesanan"));
+                label_cekPesanan_jenisKamar.setText(result.getString("tipe_kamar"));
+                label_cekPesanan_nomorKamar.setText(result.getString("nomor_kamar"));
+                label_cekPesanan_tanggalCheckIn.setText(result.getString("tanggal_check_in"));
+                label_cekPesanan_tanggalCheckOut.setText(result.getString("tanggal_check_out"));
+                label_cekPesanan_statusPesanan.setText(result.getString("status"));
+                label_cekPesanan_harga.setText("Rp. " + stringFormatterSeparator.format(Integer.parseInt(result.getString("harga"))).replace(",", ".") + ".000");
+            } else {
+                alert.errorMessage("Data tidak ditemukan");
+                
+                return;
+            }
+            
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        
+        pane_search_name_field.setDisable(true);
+        pane_search_name_field.setVisible(false);
+        
+        pane_searched.setDisable(false);
+        pane_searched.setVisible(true);
+    }
+    
+    @FXML
+    private Button btn_switch_to_search_by_id;
+
+    @FXML
+    private Button btn_switch_to_search_by_name;
+
+    
+    public void switchSearch(ActionEvent event) {
+        if(event.getSource() == btn_switch_to_search_by_name) {
+            pane_search_id_field.setDisable(true);
+            pane_search_id_field.setVisible(false);
+        
+            pane_search_name_field.setDisable(false);
+            pane_search_name_field.setVisible(true);
+        } else if (event.getSource() == btn_switch_to_search_by_id) {
+            pane_search_name_field.setDisable(true);
+            pane_search_name_field.setVisible(false);
+        
+            pane_search_id_field.setDisable(false);
+            pane_search_id_field.setVisible(true);
+        }
     }
     
 }
