@@ -5,9 +5,11 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.io.IOException;
+import java.security.SecureRandom;
 import java.text.DecimalFormat;
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
+import java.util.stream.Collectors;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -180,6 +182,58 @@ public class SceneController {
     private PreparedStatement prepare;
     private ResultSet result;
     private Statement statement;
+    
+    public static String generateRandomCharCombination(int length) {
+        final String chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%&-=+?";
+
+        SecureRandom random = new SecureRandom();
+
+        return random.ints(length, 0, chars.length())
+                     .mapToObj(chars::charAt)
+                     .map(Object::toString)
+                     .collect(Collectors.joining());
+    }
+    
+    private String IDPesanan() {
+        return generateRandomCharCombination(8);
+    }
+    
+    private String nomorKamar() {
+        
+        String nomor;
+        
+        // CEK KE DATABASE APAKAH KAMAR NOMOR xx TERSEDIA
+//        while(true) {
+            nomor = Integer.toString((int)(Math.random() * 100) + 1);
+            
+//            String checkAvailable = "SELECT * FROM room WHERE nomor = '" + nomor + "'";
+            
+//            try {
+//                
+//                statement = connect.createStatement();
+//                result = statement.executeQuery(checkAvailable);
+//            
+//                if(result.next()) {
+//                    // KAMAR TERSEDIA
+//                        // jika jadi dipesan maka baris ini akan dihapus
+//                    break;
+//                } else {
+//                    continue;
+//                }
+//            
+//            } catch (Exception e) {}
+            
+//        }
+        /* CARA KERJA
+            Jika nomor ada di database maka kustomer bisa memesan kamar tersebut, jika tidak maka akan mencari ulang nomor kamar.
+            Jika sudah menemukan nomor, satu baris ruangan nomor tersebut akan dihapus dari table database
+            Jika kustomer sudah checkout maka nomor akan ditambahkan lagi
+        */
+        
+        return nomor;
+        
+    }
+    
     public void pesanKamar() {
         try {
             
@@ -199,14 +253,14 @@ public class SceneController {
                 prepare.setString(3, textField_tanggalCheckIn.getText());
                 prepare.setString(4, textField_tanggalCheckOut.getText());
                 prepare.setString(5, label_roomType.getText());
-                prepare.setString(6, Integer.toString((int)(Math.random() * 100) + 1) );
+                prepare.setString(6, nomorKamar() );
                 prepare.setString(7, "Belum Dibayar");
-                prepare.setString(8, "PP" + Integer.toString((int)(Math.random() * 100) + 1) );
+                prepare.setString(8, IDPesanan() );
                 prepare.setString(9, Integer.toString(harga));
                 
                 prepare.executeUpdate();
                 
-                alert.successMessage("Data Berhasil Masuk!");
+                alert.successMessage("Data Berhasil Masuk!\nID Pesanan Anda: " + IDPesanan() + "\nMOHON UNTUK DISIMPAN");
                 
                 pesanKamarClearForm();
 
@@ -223,6 +277,7 @@ public class SceneController {
         textField_nomorKependudukan.setText("");
         textField_tanggalCheckIn.setText("");
         textField_tanggalCheckOut.setText("");
+        harga = 0;
     }
     
 }
