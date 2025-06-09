@@ -4,8 +4,6 @@ module-info.class
 com\mycompany\santarahotel\alertMessage.class
 com\mycompany\santarahotel\homeController.class
 com\mycompany\santarahotel\ReservasiController.class
-com\mycompany\santarahotel\loginController.class
-com\mycompany\santarahotel\PrimaryController.class
 com\mycompany\santarahotel\GMailer.class
 com\mycompany\santarahotel\SwitchScene.class
 com\mycompany\santarahotel\ImageSliderController.class

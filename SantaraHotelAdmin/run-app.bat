@@ -1,0 +1,1 @@
+java --module-path ".\javafx-sdk-21.0.7\lib" --add-modules javafx.controls,javafx.fxml -jar target/SantaraHotelAdmin-1.0-SNAPSHOT.jar

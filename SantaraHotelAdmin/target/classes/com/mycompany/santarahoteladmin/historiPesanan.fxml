@@ -85,7 +85,7 @@
                   <Font name="System Bold" size="36.0" />
                </font>
             </Label>
-            <TextField fx:id="textField_nama" layoutX="91.0" layoutY="719.0" prefHeight="30.0" prefWidth="200.0" promptText="Nama Pemesan">
+            <TextField fx:id="textField_nama" layoutX="71.0" layoutY="719.0" prefHeight="30.0" prefWidth="200.0" promptText="Nama Pemesan">
                <font>
                   <Font size="14.0" />
                </font>
@@ -98,7 +98,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <TextField fx:id="textField_email" layoutX="91.0" layoutY="769.0" prefHeight="30.0" prefWidth="200.0" promptText="Email">
+            <TextField fx:id="textField_email" layoutX="71.0" layoutY="769.0" prefHeight="30.0" prefWidth="200.0" promptText="Email">
                <font>
                   <Font size="14.0" />
                </font>
@@ -108,11 +108,11 @@
                   <Font size="14.0" />
                </font>
             </TextField>
-            <DatePicker fx:id="datePicker_tanggalCheckIn" layoutX="315.0" layoutY="716.0" prefHeight="30.0" prefWidth="200.0" promptText="Tanggal Check In" />
-            <DatePicker fx:id="datePicker_tanggalCheckOut" layoutX="315.0" layoutY="769.0" prefHeight="30.0" prefWidth="200.0" promptText="Tanggal Check Out" />
-            <ComboBox fx:id="comboBox_statusPesanan" layoutX="544.0" layoutY="770.0" prefHeight="30.0" prefWidth="200.0" promptText="Status Pesanan" visibleRowCount="4" />
-            <ComboBox fx:id="comboBox_tipeKamar" layoutX="544.0" layoutY="717.0" prefHeight="30.0" prefWidth="200.0" promptText="Tipe Kamar" visibleRowCount="4" />
-            <ComboBox fx:id="comboBox_SearchIndex" layoutX="93.0" layoutY="672.0" onAction="#searchBy" prefHeight="32.0" prefWidth="653.0" promptText="Telusuri Berdasarkan" visibleRowCount="2" />
+            <DatePicker fx:id="datePicker_tanggalCheckIn" layoutX="295.0" layoutY="716.0" prefHeight="30.0" prefWidth="200.0" promptText="Tanggal Check In" />
+            <DatePicker fx:id="datePicker_tanggalCheckOut" layoutX="295.0" layoutY="769.0" prefHeight="30.0" prefWidth="200.0" promptText="Tanggal Check Out" />
+            <ComboBox fx:id="comboBox_statusPesanan" layoutX="524.0" layoutY="770.0" prefHeight="30.0" prefWidth="200.0" promptText="Status Pesanan" visibleRowCount="4" />
+            <ComboBox fx:id="comboBox_tipeKamar" layoutX="524.0" layoutY="717.0" prefHeight="30.0" prefWidth="200.0" promptText="Tipe Kamar" visibleRowCount="4" />
+            <ComboBox fx:id="comboBox_SearchIndex" layoutX="73.0" layoutY="672.0" onAction="#searchBy" prefHeight="32.0" prefWidth="653.0" promptText="Telusuri Berdasarkan" visibleRowCount="2" />
             <Button layoutX="770.0" layoutY="767.0" mnemonicParsing="false" onAction="#clearIndex" prefHeight="30.0" prefWidth="118.0" style="-fx-background-color: #533722;" text="Clear" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="18.0" />
@@ -139,7 +139,7 @@
                   <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
                </columnResizePolicy>
             </TableView>
-            <Button layoutX="900.0" layoutY="767.0" mnemonicParsing="false" onAction="#downloadEntireTable" prefHeight="30.0" prefWidth="118.0" style="-fx-background-color: #533722;" text="Export All" textFill="WHITE">
+            <Button layoutX="900.0" layoutY="717.0" mnemonicParsing="false" onAction="#downloadEntireTable" prefHeight="30.0" prefWidth="118.0" style="-fx-background-color: #533722;" text="Export All" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
@@ -147,7 +147,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Button layoutX="900.0" layoutY="717.0" mnemonicParsing="false" onAction="#downloadFilteredTable" prefHeight="30.0" prefWidth="118.0" style="-fx-background-color: #533722;" text="Export" textFill="WHITE">
+            <Button layoutX="900.0" layoutY="667.0" mnemonicParsing="false" onAction="#downloadFilteredTable" prefHeight="30.0" prefWidth="118.0" style="-fx-background-color: #533722;" text="Export" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
@@ -155,7 +155,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Button layoutX="770.0" layoutY="817.0" mnemonicParsing="false" onAction="#importData" prefHeight="40.0" prefWidth="249.0" style="-fx-background-color: #533722;" text="Import Existing Data" textFill="WHITE">
+            <Button layoutX="900.0" layoutY="767.0" mnemonicParsing="false" onAction="#importData" prefHeight="40.0" prefWidth="119.0" style="-fx-background-color: #533722;" text="Import" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>

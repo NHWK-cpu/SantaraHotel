@@ -13,7 +13,7 @@ import io.github.cdimascio.dotenv.Dotenv;
 public class ConnectionDB {
     // Method statis untuk menginisialisasi koneksi ke database
     public static Connection ConnectDb() {
-        Dotenv dotenv = Dotenv.configure().directory(".\\src\\main\\java\\com\\mycompany\\santarahotel\\").load(); // Untuk menyambungkan file .env 
+        Dotenv dotenv = Dotenv.configure().directory(".\\src\\main\\java\\com\\mycompany\\santarahoteladmin\\").load(); // Untuk menyambungkan file .env 
         try {
             // Memuat driver JDBC untuk MySQL (dibutuhkan agar bisa menggunakan koneksi JDBC)
             Class.forName("com.mysql.cj.jdbc.Driver");
