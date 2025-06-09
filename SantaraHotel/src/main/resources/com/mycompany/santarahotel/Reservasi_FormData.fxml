@@ -1,0 +1,369 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane maxHeight="1024.0" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="870.0" prefWidth="1440.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.santarahotel.ReservasiController">
+   <top>
+      <Pane prefHeight="100.0" prefWidth="1440.0" style="-fx-background-color: #533722;" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="79.0" fitWidth="112.0" layoutX="15.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@image/logo/logo.png" />
+               </image>
+            </ImageView>
+            <Button layoutX="74.0" layoutY="27.0" mnemonicParsing="false" onAction="#switchToHome" style="-fx-background-color: #533722;" text="ANTARA" textFill="WHITE">
+               <font>
+                  <Font size="48.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <padding>
+                  <Insets bottom="-1.0" />
+               </padding>
+            </Button>
+            <MenuBar layoutX="1002.0" layoutY="39.0" scaleX="2.0" scaleY="2.0" style="-fx-background-color: #533722;">
+               <menus>
+                  <Menu mnemonicParsing="false" style="-fx-text-fill: white;">
+                     <graphic>
+                        <Label text="▼ ABOUT" textFill="WHITE">
+                           <font>
+                              <Font name="Poppins Regular" size="12.0" />
+                           </font>
+                        </Label>
+                     </graphic>
+                     <items>
+                        <MenuItem mnemonicParsing="false" onAction="#swithToAboutCompany" text="Our company" />
+                        <MenuItem mnemonicParsing="false" onAction="#switchToBiodata" text="App Credit" />
+                     </items>
+                  </Menu>
+                  <Menu mnemonicParsing="false">
+                     <graphic>
+                        <Label text="▼ ORDER STATUS" textFill="WHITE" />
+                     </graphic>
+                     <items>
+                        <MenuItem fx:id="MenuSearchID" mnemonicParsing="false" onAction="#switchToCekPesanan" text="Check based on ID" />
+                        <MenuItem fx:id="MenuSearchName" mnemonicParsing="false" onAction="#switchToCekPesanan" text="Check based on Name" />
+                     </items>
+                  </Menu>
+                  <Menu mnemonicParsing="false">
+                     <items>
+                        <MenuItem fx:id="Standard" mnemonicParsing="false" onAction="#switchToReservasi" text="Standard" />
+                        <MenuItem fx:id="Premium" mnemonicParsing="false" onAction="#switchToReservasi" text="Premium" />
+                        <MenuItem fx:id="Deluxe" mnemonicParsing="false" onAction="#switchToReservasi" text="Deluxe" />
+                     </items>
+                     <graphic>
+                        <Label text="▼ RESERVATION" textFill="WHITE" />
+                     </graphic>
+                  </Menu>
+               </menus>
+            </MenuBar>
+         </children>
+      </Pane>
+   </top>
+   <center>
+      <HBox alignment="CENTER" BorderPane.alignment="CENTER">
+         <children>
+            <Pane prefHeight="739.0" prefWidth="1406.0">
+               <children>
+                  <Label layoutX="14.0" layoutY="30.0" text="Pemesanan Akomodasi">
+                     <font>
+                        <Font name="System Bold" size="36.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="14.0" layoutY="84.0" text="Pastikan kamu mengisi semua informasi di halaman ini benar sebelum melanjutkan ke pembayaran.">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="28.0" layoutY="161.0" text="Data Pemesan (untuk E-voucher)">
+                     <font>
+                        <Font name="System Bold" size="30.0" />
+                     </font>
+                  </Label>
+                  <Text layoutX="28.0" layoutY="230.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Isi semua kolom dengan benar untuk memastikan kamu dapat menerima voucher konfirmasi pemesanan di email yang dicantumkan." wrappingWidth="799.4047241210938">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Text>
+                  <Label layoutX="31.0" layoutY="299.0" text="Nama Lengkap (sesuai KTP/Paspor/SIM)">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="textField_namaPemesan" layoutX="36.0" layoutY="330.0" prefHeight="40.0" prefWidth="721.0" promptText="Contoh: fafa">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </TextField>
+                  <Label layoutX="33.0" layoutY="371.0" text="Gunakan huruf alfabet (A-Z), tanpa tanda baca, dan gelar.">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="34.0" layoutY="409.0" text="Email">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="textField_email" layoutX="39.0" layoutY="443.0" prefHeight="40.0" prefWidth="347.0">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </TextField>
+                  <Label layoutX="35.0" layoutY="481.0" text="E-voucher akan dikirim ke email ini. ">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="408.0" layoutY="408.0" text="Nomor Handphone">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="textField_nomorHandphone" layoutX="413.0" layoutY="442.0" prefHeight="40.0" prefWidth="347.0" promptText="Contoh: +62812345678">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </TextField>
+                  <Text layoutX="418.0" layoutY="500.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Untuk Kode Negara (+62) dan No. Handphone 081234567" wrappingWidth="339.0283203125">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Text>
+                  <Label layoutX="34.0" layoutY="546.0" text="Check In">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="410.0" layoutY="546.0" text="Check Out">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="41.0" layoutY="654.0" text="Kode Voucher Promo" visible="false">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField layoutX="39.0" layoutY="686.0" prefHeight="40.0" prefWidth="543.0" promptText="Contoh: PesanTouring2025" visible="false">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </TextField>
+                  <Button layoutX="627.0" layoutY="685.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="134.0" style="-fx-background-color: #533722;" text="Check" textFill="WHITE" visible="false">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </Button>
+                  <ImageView fx:id="imageView_previewKamar" fitHeight="320.0" fitWidth="435.0" layoutX="920.0" layoutY="213.0" pickOnBounds="true">
+                     <image>
+                        <Image url="@image/KamarDeluxe.png" />
+                     </image>
+                  </ImageView>
+                  <HBox layoutX="919.0" layoutY="534.0" prefWidth="432.0">
+                     <children>
+                        <Label text="(1x)">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets right="5.0" />
+                           </HBox.margin>
+                        </Label>
+                        <Label fx:id="label_varianKamar" layoutX="10.0" layoutY="10.0" text="Deluxe Twin Bed">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox layoutX="919.0" layoutY="558.0" prefWidth="432.0">
+                     <children>
+                        <Label text="Sisa " textFill="RED">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="10.0" layoutY="10.0" text="4" textFill="RED">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="46.0" layoutY="10.0" text=" kamar!" textFill="RED">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" layoutX="916.0" layoutY="124.0" prefWidth="437.0" styleClass="promo_background" stylesheets="@style.css">
+                     <children>
+                        <ImageView fitHeight="26.0" fitWidth="26.0" pickOnBounds="true">
+                           <image>
+                              <Image url="@image/icon/Timer.png" />
+                           </image>
+                           <HBox.margin>
+                              <Insets right="10.0" />
+                           </HBox.margin>
+                        </ImageView>
+                        <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Jangan lewatkan! Sisa 4 kamar untuk harga paling murah" wrappingWidth="365.6297607421875">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Text>
+                     </children>
+                     <padding>
+                        <Insets bottom="15.0" left="20.0" top="15.0" />
+                     </padding></HBox>
+                  <VBox layoutX="923.0" layoutY="586.0" prefWidth="204.0">
+                     <children>
+                        <HBox prefWidth="204.0">
+                           <children>
+                              <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true">
+                                 <image>
+                                    <Image url="@image/icon/group_people.png" />
+                                 </image>
+                                 <HBox.margin>
+                                    <Insets right="5.0" />
+                                 </HBox.margin>
+                              </ImageView>
+                              <Label maxHeight="1.7976931348623157E308" text="2 Tamu">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </HBox>
+                        <HBox layoutX="10.0" layoutY="10.0" prefWidth="204.0">
+                           <children>
+                              <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true">
+                                 <image>
+                                    <Image url="@image/icon/group_people.png" />
+                                 </image>
+                                 <HBox.margin>
+                                    <Insets right="5.0" />
+                                 </HBox.margin>
+                              </ImageView>
+                              <Label maxHeight="1.7976931348623157E308" text="1 Anak">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <HBox layoutX="10.0" layoutY="30.0" prefWidth="204.0">
+                           <children>
+                              <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true">
+                                 <image>
+                                    <Image url="@image/icon/bed_black.png" />
+                                 </image>
+                                 <HBox.margin>
+                                    <Insets right="5.0" />
+                                 </HBox.margin>
+                              </ImageView>
+                              <Label maxHeight="1.7976931348623157E308" text="1 Ranjang twin">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <HBox layoutX="10.0" layoutY="50.0" prefWidth="204.0">
+                           <children>
+                              <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true">
+                                 <image>
+                                    <Image url="@image/icon/food_tools.png" />
+                                 </image>
+                                 <HBox.margin>
+                                    <Insets right="5.0" />
+                                 </HBox.margin>
+                              </ImageView>
+                              <Label maxHeight="1.7976931348623157E308" text="Termasuk Sarapan">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <HBox layoutX="10.0" layoutY="70.0" prefWidth="204.0">
+                           <children>
+                              <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@image/icon/wifi.png" />
+                                 </image>
+                                 <HBox.margin>
+                                    <Insets right="10.0" />
+                                 </HBox.margin>
+                              </ImageView>
+                              <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@image/icon/NoSmoke.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                           <VBox.margin>
+                              <Insets top="5.0" />
+                           </VBox.margin>
+                        </HBox>
+                     </children>
+                  </VBox>
+                  <Label layoutX="926.0" layoutY="693.0" text="Total harga kamar">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="926.0" layoutY="714.0" text="1 Kamar,">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="989.0" layoutY="714.0" text="1 malam">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="label_hargaAkhir" layoutX="1171.0" layoutY="717.0" text="Rp 444.298" textFill="#ff5e1f">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Text fx:id="text_beforeDiscount" layoutX="1168.0" layoutY="714.0" strikethrough="true" strokeType="OUTSIDE" strokeWidth="0.0" text="Rp 592.396" textAlignment="RIGHT" wrappingWidth="77.6002197265625" />
+                  <Button layoutX="1284.0" layoutY="698.0" mnemonicParsing="false" onAction="#pesanKamar" style="-fx-background-color: #533722;" text="Pesan" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <DatePicker fx:id="datePicker_tanggalCheckIn" layoutX="39.0" layoutY="578.0" onAction="#datePicker" prefHeight="37.0" prefWidth="350.0" />
+                  <DatePicker fx:id="datePicker_tanggalCheckOut" layoutX="417.0" layoutY="574.0" onAction="#datePicker" prefHeight="37.0" prefWidth="350.0" />
+               </children>
+            </Pane>
+         </children>
+      </HBox>
+   </center>
+</BorderPane>

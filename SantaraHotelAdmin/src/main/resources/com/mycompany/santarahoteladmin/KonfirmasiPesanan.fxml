@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="870.0" prefWidth="1440.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.santarahoteladmin.KonfirmasiController">
+   <left>
+      <Pane fx:id="sidenavbar" prefHeight="870.0" prefWidth="328.0" style="-fx-background-color: #533722;" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="79.0" fitWidth="112.0" layoutX="26.0" layoutY="40.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@image/logo/logo.png" />
+               </image>
+            </ImageView>
+            <Button layoutX="90.0" layoutY="51.0" mnemonicParsing="false" style="-fx-background-color: #533722;" text="ANTARA" textFill="WHITE">
+               <font>
+                  <Font size="48.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <padding>
+                  <Insets bottom="-1.0" />
+               </padding>
+            </Button>
+            <Button layoutX="32.0" layoutY="312.0" mnemonicParsing="false" onAction="#switchToKonfirmasiPesanan" styleClass="nav-button" stylesheets="@style.css" text="Konfirmasi Pesanan" textAlignment="CENTER" textFill="#533722">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button layoutX="32.0" layoutY="412.0" mnemonicParsing="false" onAction="#switchToHistoriPesanan" styleClass="nav-button" stylesheets="@style.css" text="Riwayat Pemesanan" textAlignment="CENTER" textFill="#533722">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button layoutX="29.0" layoutY="519.0" mnemonicParsing="false" onAction="#switchToLaporanPendapatan" styleClass="nav-button" stylesheets="@style.css" text="Laporan Pendapatan" textAlignment="CENTER" textFill="#533722">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+         </children>
+      </Pane>
+   </left>
+   <center>
+      <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-icolor: white;" BorderPane.alignment="CENTER">
+         <children>
+            <Button layoutX="9.0" layoutY="48.0" mnemonicParsing="false" onAction="#navbar" prefHeight="55.0" prefWidth="47.0" style="-fx-background-color: rgb(0,0,0,0);">
+               <graphic>
+                  <ImageView blendMode="DARKEN" fitHeight="58.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@image/icon/navbar_burger.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Label layoutX="68.0" layoutY="58.0" text="Konfirmasi Pesanan" textFill="#533722">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="118.0" layoutY="152.0" text="Data pelanggan akan muncul di sini">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="117.0" layoutY="178.0" text="Verifikasi terlebih dahulu kepada pelanggan tentang detail pesanan">
+               <font>
+                  <Font name="System Italic" size="14.0" />
+               </font>
+            </Label>
+            <HBox layoutX="154.0" layoutY="215.0" styleClass="pane_background" stylesheets="@style.css">
+               <children>
+                  <Pane prefHeight="204.0" prefWidth="97.0">
+                     <children>
+                        <ImageView fitHeight="55.0" fitWidth="64.0" layoutX="35.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@image/icon/person.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="55.0" fitWidth="49.0" layoutX="41.0" layoutY="135.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@image/bill.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+                  <VBox prefHeight="204.0" prefWidth="570.0">
+                     <children>
+                        <HBox prefWidth="200.0">
+                           <children>
+                              <Label text="Nama Pemesan :">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets right="5.0" />
+                                 </HBox.margin>
+                              </Label>
+                              <Label fx:id="label_namaPemesan" layoutX="10.0" layoutY="10.0">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <padding>
+                              <Insets bottom="10.0" />
+                           </padding>
+                        </HBox>
+                        <HBox layoutX="30.0" layoutY="20.0" prefWidth="200.0">
+                           <children>
+                              <Label text="Jenis Kamar :">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets right="5.0" />
+                                 </HBox.margin>
+                              </Label>
+                              <Label fx:id="label_jenisKamar" layoutX="10.0" layoutY="10.0">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <padding>
+                              <Insets bottom="10.0" />
+                           </padding>
+                        </HBox>
+                        <HBox layoutX="30.0" layoutY="56.0" prefWidth="200.0">
+                           <children>
+                              <Label text="Layanan :">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets right="5.0" />
+                                 </HBox.margin>
+                              </Label>
+                              <Label fx:id="label_varian" layoutX="10.0" layoutY="10.0">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <padding>
+                              <Insets bottom="10.0" />
+                           </padding>
+                        </HBox>
+                        <HBox layoutX="30.0" layoutY="92.0" prefWidth="200.0">
+                           <children>
+                              <Label text="Nomor Kamar :">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets right="5.0" />
+                                 </HBox.margin>
+                              </Label>
+                              <Label fx:id="label_noKamar" layoutX="10.0" layoutY="10.0">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <padding>
+                              <Insets bottom="10.0" />
+                           </padding>
+                        </HBox>
+                        <Separator blendMode="MULTIPLY" prefWidth="200.0" style="-fx-background-color: gray;" />
+                        <HBox layoutX="10.0" layoutY="10.0" prefWidth="200.0">
+                           <children>
+                              <Label text="Harga Pesanan :">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets right="5.0" />
+                                 </HBox.margin>
+                              </Label>
+                              <Label fx:id="label_harga" layoutX="10.0" layoutY="10.0">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <padding>
+                              <Insets bottom="10.0" top="10.0" />
+                           </padding>
+                        </HBox>
+                        <HBox layoutX="10.0" layoutY="56.0" prefWidth="200.0">
+                           <children>
+                              <Label text="Status :">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets right="5.0" />
+                                 </HBox.margin>
+                              </Label>
+                              <Label fx:id="label_status" layoutX="10.0" layoutY="10.0">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <padding>
+                              <Insets bottom="10.0" />
+                           </padding>
+                        </HBox>
+                     </children>
+                     <padding>
+                        <Insets left="20.0" right="20.0" top="10.0" />
+                     </padding>
+                  </VBox>
+               </children>
+            </HBox>
+            <Button layoutX="625.0" layoutY="705.0" mnemonicParsing="false" onAction="#ubahStatus" prefHeight="40.0" prefWidth="206.0" style="-fx-background-color: #533722;" text="Konfirmasi" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <AnchorPane layoutX="172.0" layoutY="539.0">
+               <children>
+                  <TextField fx:id="textField_nama" layoutY="47.0" prefHeight="30.0" prefWidth="200.0" promptText="Nama Pemesan">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </TextField>
+                  <Button layoutX="679.0" layoutY="45.0" mnemonicParsing="false" onAction="#cariData" prefHeight="30.0" prefWidth="118.0" style="-fx-background-color: #533722;" text="Cari" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <TextField fx:id="textField_email" layoutY="97.0" prefHeight="30.0" prefWidth="200.0" promptText="Email">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="textField_ID" disable="true" layoutX="679.0" layoutY="1.0" prefHeight="30.0" prefWidth="118.0" promptText="ID Pesanan" visible="false">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </TextField>
+                  <DatePicker fx:id="datePicker_tanggalCheckIn" layoutX="224.0" layoutY="44.0" prefHeight="30.0" prefWidth="200.0" promptText="Tanggal Check In" />
+                  <DatePicker fx:id="datePicker_tanggalCheckOut" layoutX="224.0" layoutY="97.0" prefHeight="30.0" prefWidth="200.0" promptText="Tanggal Check Out" />
+                  <ComboBox fx:id="comboBox_statusPesanan" layoutX="453.0" layoutY="98.0" prefHeight="30.0" prefWidth="200.0" promptText="Status Pesanan" visibleRowCount="4" />
+                  <ComboBox fx:id="comboBox_tipeKamar" layoutX="453.0" layoutY="45.0" prefHeight="30.0" prefWidth="200.0" promptText="Tipe Kamar" visibleRowCount="4" />
+                  <ComboBox fx:id="comboBox_SearchIndex" layoutX="2.0" onAction="#searchBy" prefHeight="32.0" prefWidth="653.0" promptText="Telusuri Berdasarkan" visibleRowCount="2" />
+                  <Button layoutX="679.0" layoutY="95.0" mnemonicParsing="false" onAction="#switchToKonfirmasiPesanan" prefHeight="30.0" prefWidth="118.0" style="-fx-background-color: #533722;" text="Clear" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+               </children>
+            </AnchorPane>
+            <Label layoutX="125.0" layoutY="470.0" text="Cari data pelanggan berdasarkan informasi umum atau id pesanan">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="124.0" layoutY="496.0" text="Tanyakan kepada pelanggan tentang infomrasi umum atau id pesanan sebagai acuan mencari data di penyimpanan pusat">
+               <font>
+                  <Font name="System Italic" size="14.0" />
+               </font>
+            </Label>
+            <ComboBox fx:id="comboBox_statusUpdated" layoutX="396.0" layoutY="702.0" prefHeight="41.0" prefWidth="196.0" />
+            <Label layoutX="196.0" layoutY="709.0" text="Ubah status pesanan:">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+   </center>
+</BorderPane>

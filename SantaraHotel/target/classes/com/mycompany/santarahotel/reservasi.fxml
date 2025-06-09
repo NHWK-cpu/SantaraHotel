@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.SVGPath?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane maxHeight="1024.0" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="870.0" prefWidth="1440.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.santarahotel.ReservasiController">
+   <top>
+      <Pane prefHeight="100.0" prefWidth="1440.0" style="-fx-background-color: #533722;" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="79.0" fitWidth="112.0" layoutX="15.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@image/logo/logo.png" />
+               </image>
+            </ImageView>
+            <Button layoutX="74.0" layoutY="27.0" mnemonicParsing="false" onAction="#switchToHome" style="-fx-background-color: #533722;" text="ANTARA" textFill="WHITE">
+               <font>
+                  <Font size="48.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <padding>
+                  <Insets bottom="-1.0" />
+               </padding>
+            </Button>
+            <MenuBar layoutX="1002.0" layoutY="39.0" scaleX="2.0" scaleY="2.0" style="-fx-background-color: #533722;">
+               <menus>
+                  <Menu mnemonicParsing="false" style="-fx-text-fill: white;">
+                     <graphic>
+                        <Label text="▼ ABOUT" textFill="WHITE">
+                           <font>
+                              <Font name="Poppins Regular" size="12.0" />
+                           </font>
+                        </Label>
+                     </graphic>
+                     <items>
+                        <MenuItem mnemonicParsing="false" onAction="#swithToAboutCompany" text="Our company" />
+                        <MenuItem mnemonicParsing="false" onAction="#switchToBiodata" text="App Credit" />
+                     </items>
+                  </Menu>
+                  <Menu mnemonicParsing="false">
+                     <graphic>
+                        <Label text="▼ ORDER STATUS" textFill="WHITE" />
+                     </graphic>
+                     <items>
+                        <MenuItem fx:id="MenuSearchID" mnemonicParsing="false" onAction="#switchToCekPesanan" text="Check based on ID" />
+                        <MenuItem fx:id="MenuSearchName" mnemonicParsing="false" onAction="#switchToCekPesanan" text="Check based on Name" />
+                     </items>
+                  </Menu>
+                  <Menu mnemonicParsing="false">
+                     <items>
+                        <MenuItem fx:id="Standard" mnemonicParsing="false" onAction="#switchToReservasi" text="Standard" />
+                        <MenuItem fx:id="Premium" mnemonicParsing="false" onAction="#switchToReservasi" text="Premium" />
+                        <MenuItem fx:id="Deluxe" mnemonicParsing="false" onAction="#switchToReservasi" text="Deluxe" />
+                     </items>
+                     <graphic>
+                        <Label text="▼ RESERVATION" textFill="WHITE" />
+                     </graphic>
+                  </Menu>
+               </menus>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </MenuBar>
+         </children>
+      </Pane>
+   </top>
+   <center>
+      <HBox alignment="CENTER" BorderPane.alignment="CENTER">
+         <children>
+            <AnchorPane maxHeight="954.0" prefHeight="770.0" prefWidth="1358.0">
+               <children>
+                  <Label fx:id="label_tipeKamar" layoutX="25.0" layoutY="17.0" text="Santara Standart" textFill="#533722">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Label>
+                  <StackPane layoutX="45.0" layoutY="56.0" prefHeight="440.0" prefWidth="385.0">
+                     <children>
+                        <ImageView fx:id="imageView_previewKamar" fitHeight="431.0" fitWidth="400.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@image/KamarStandar.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </StackPane>
+                  <VBox layoutX="482.0" layoutY="121.0" prefWidth="871.0">
+                     <children>
+                        <HBox prefHeight="61.0" prefWidth="871.0">
+                           <children>
+                              <Label maxHeight="1.7976931348623157E308" text="Pilihan Kamar" textFill="#533722">
+                                 <font>
+                                    <Font name="System Bold" size="26.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets right="170.0" />
+                                 </HBox.margin>
+                              </Label>
+                              <Label layoutX="10.0" layoutY="10.0" maxHeight="1.7976931348623157E308" text="Tamu" textFill="#533722">
+                                 <font>
+                                    <Font name="System Bold" size="26.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets right="90.0" />
+                                 </HBox.margin>
+                              </Label>
+                              <Label layoutX="167.0" layoutY="10.0" maxHeight="1.7976931348623157E308" text="Harga/kamar/malam" textFill="#533722">
+                                 <font>
+                                    <Font name="System Bold" size="26.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <Pane prefHeight="144.0" prefWidth="871.0">
+                           <children>
+                              <Label layoutX="1.0" layoutY="16.0" styleClass="poppins-regular" stylesheets="@style.css" text="Santara Room - Room Only" textFill="#533722">
+                                 <font>
+                                    <Font name="Poppins Regular" size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutY="37.0" text="Tidak termasuk sarapan" textFill="#533722">
+                                 <font>
+                                    <Font name="System Bold" size="20.0" />
+                                 </font>
+                              </Label>
+                              <HBox layoutX="3.0" layoutY="67.0" prefWidth="200.0">
+                                 <children>
+                                    <Pane prefHeight="0.0" prefWidth="23.0">
+                                       <children>
+                                          <SVGPath content="M204-240h-24l-36-96H96v-192q0-30.08 21.15-51.04T168-600v-93q0-30.94 22.03-52.97Q212.06-768 243-768h474q30.94 0 52.97 22.03Q792-723.94 792-693v93q30 0 51 21.15T864-528v192h-48l-36 96h-24l-36-96H240l-36 96Zm312-360h204v-96H516v96Zm-276 0h204v-96H240v96Z" fill="#7a7c7c" layoutX="-468.0" layoutY="515.0" scaleX="0.03" scaleY="0.03" />
+                                       </children>
+                                    </Pane>
+                                    <Label text="1 Bed">
+                                       <font>
+                                          <Font name="Poppins Light" size="14.0" />
+                                       </font>
+                                       <HBox.margin>
+                                          <Insets left="10.0" />
+                                       </HBox.margin>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                              <HBox layoutX="5.0" layoutY="90.0">
+                                 <children>
+                                    <Label text="✓Gratis pembatalan sampai " textFill="#19906d">
+                                       <font>
+                                          <Font name="Poppins Italic" size="15.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="10.0" layoutY="10.0" text="28 Apr 12:59" textFill="#19906d">
+                                       <font>
+                                          <Font name="Poppins Italic" size="15.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                              <SVGPath content="M480-480q-60 0-102-42t-42-102q0-60 42-102t102-42q60 0 102 42t42 102q0 60-42 102t-102 42ZM192-192v-96q0-23 12.5-43.5T239-366q55-32 116.5-49T480-432q63 0 124.5 17T721-366q22 13 34.5 34t12.5 44v96H192Z" fill="#7a7c7c" layoutX="-120.0" layoutY="526.0" scaleX="0.05" scaleY="0.05" />
+                              <SVGPath content="M480-480q-60 0-102-42t-42-102q0-60 42-102t102-42q60 0 102 42t42 102q0 60-42 102t-102 42ZM192-192v-96q0-23 12.5-43.5T239-366q55-32 116.5-49T480-432q63 0 124.5 17T721-366q22 13 34.5 34t12.5 44v96H192Z" fill="#7a7c7c" layoutX="-84.0" layoutY="526.0" scaleX="0.05" scaleY="0.05" />
+                              <Pane layoutX="573.0" layoutY="11.0" style="-fx-background-color: #533722; -fx-background-radius: 15;">
+                                 <children>
+                                    <Label layoutX="-1.0" layoutY="-1.0" text="HOTEL DEALS" textFill="#f7f7f7">
+                                       <font>
+                                          <Font name="Poppins SemiBold" size="14.0" />
+                                       </font>
+                                       <padding>
+                                          <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
+                                       </padding>
+                                    </Label>
+                                 </children>
+                              </Pane>
+                              <Text fx:id="text_hargaTanpaSarapan_sebelumDiskon" fill="#7a7c7c" layoutX="607.0" layoutY="60.0" strikethrough="true" strokeType="OUTSIDE" strokeWidth="0.0" text="Rp. 383.500">
+                                 <font>
+                                    <Font name="Poppins Regular" size="12.0" />
+                                 </font>
+                              </Text>
+                              <Text fx:id="text_hargaTanpaSarapan" fill="#533722" layoutX="579.0" layoutY="83.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rp. 287.500">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Text>
+                              <Text fill="#7a7c7c" layoutX="564.0" layoutY="99.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tidak termasuk pajak" textAlignment="RIGHT">
+                                 <font>
+                                    <Font name="Poppins Regular" size="12.0" />
+                                 </font>
+                              </Text>
+                              <Button fx:id="button_tidakTermasukSarapan" layoutX="762.0" layoutY="47.0" mnemonicParsing="false" onAction="#switchToReservasiIsiData" style="-fx-background-color: #0194F3;" text="Pilih" textFill="WHITE">
+                                 <font>
+                                    <Font name="Poppins Bold" size="16.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                           </children>
+                        </Pane>
+                        <Pane layoutX="10.0" layoutY="72.0" prefHeight="144.0" prefWidth="871.0">
+                           <children>
+                              <Label layoutX="1.0" layoutY="16.0" text="Santara Room - Room &amp; Breakfast" textFill="#533722">
+                                 <font>
+                                    <Font name="Poppins Regular" size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutY="37.0" text="Termasuk sarapan" textFill="#533722">
+                                 <font>
+                                    <Font name="System Bold" size="20.0" />
+                                 </font>
+                              </Label>
+                              <HBox layoutX="3.0" layoutY="67.0" prefWidth="200.0">
+                                 <children>
+                                    <Pane prefHeight="0.0" prefWidth="23.0">
+                                       <children>
+                                          <SVGPath content="M204-240h-24l-36-96H96v-192q0-30.08 21.15-51.04T168-600v-93q0-30.94 22.03-52.97Q212.06-768 243-768h474q30.94 0 52.97 22.03Q792-723.94 792-693v93q30 0 51 21.15T864-528v192h-48l-36 96h-24l-36-96H240l-36 96Zm312-360h204v-96H516v96Zm-276 0h204v-96H240v96Z" fill="#7a7c7c" layoutX="-468.0" layoutY="515.0" scaleX="0.03" scaleY="0.03" />
+                                       </children>
+                                    </Pane>
+                                    <Label text="1 Bed">
+                                       <font>
+                                          <Font name="Poppins Light" size="14.0" />
+                                       </font>
+                                       <HBox.margin>
+                                          <Insets left="10.0" />
+                                       </HBox.margin>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                              <HBox layoutX="5.0" layoutY="90.0">
+                                 <children>
+                                    <Label text="✓Gratis pembatalan sampai " textFill="#19906d">
+                                       <font>
+                                          <Font name="Poppins Italic" size="15.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="10.0" layoutY="10.0" text="28 Apr 12:59" textFill="#19906d">
+                                       <font>
+                                          <Font name="Poppins Italic" size="15.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                              <SVGPath content="M480-480q-60 0-102-42t-42-102q0-60 42-102t102-42q60 0 102 42t42 102q0 60-42 102t-102 42ZM192-192v-96q0-23 12.5-43.5T239-366q55-32 116.5-49T480-432q63 0 124.5 17T721-366q22 13 34.5 34t12.5 44v96H192Z" fill="#7a7c7c" layoutX="-120.0" layoutY="526.0" scaleX="0.05" scaleY="0.05" />
+                              <SVGPath content="M480-480q-60 0-102-42t-42-102q0-60 42-102t102-42q60 0 102 42t42 102q0 60-42 102t-102 42ZM192-192v-96q0-23 12.5-43.5T239-366q55-32 116.5-49T480-432q63 0 124.5 17T721-366q22 13 34.5 34t12.5 44v96H192Z" fill="#7a7c7c" layoutX="-84.0" layoutY="526.0" scaleX="0.05" scaleY="0.05" />
+                              <Pane layoutX="573.0" layoutY="11.0" style="-fx-background-color: #533722; -fx-background-radius: 15;">
+                                 <children>
+                                    <Label layoutX="-1.0" layoutY="-1.0" text="HOTEL DEALS" textFill="#f7f7f7">
+                                       <font>
+                                          <Font name="Poppins SemiBold" size="14.0" />
+                                       </font>
+                                       <padding>
+                                          <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
+                                       </padding>
+                                    </Label>
+                                 </children>
+                              </Pane>
+                              <Text fx:id="text_hargaDenganSarapan_sebelumDiskon" fill="#7a7c7c" layoutX="607.0" layoutY="60.0" strikethrough="true" strokeType="OUTSIDE" strokeWidth="0.0" text="Rp. 466.500">
+                                 <font>
+                                    <Font name="Poppins Regular" size="12.0" />
+                                 </font>
+                              </Text>
+                              <Text fx:id="text_hargaDenganSarapan" fill="#533722" layoutX="579.0" layoutY="83.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rp. 350.500">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Text>
+                              <Text fill="#7a7c7c" layoutX="564.0" layoutY="99.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tidak termasuk pajak" textAlignment="RIGHT">
+                                 <font>
+                                    <Font name="Poppins Regular" size="12.0" />
+                                 </font>
+                              </Text>
+                              <Button fx:id="button_termasukSarapan" layoutX="762.0" layoutY="47.0" mnemonicParsing="false" onAction="#switchToReservasiIsiData" style="-fx-background-color: #0194F3;" text="Pilih" textFill="WHITE">
+                                 <font>
+                                    <Font name="Poppins Bold" size="16.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                           </children>
+                        </Pane>
+                     </children>
+                  </VBox>
+                  <Label layoutX="79.0" layoutY="508.0" text="16.0 m" textFill="#533722">
+                     <font>
+                        <Font name="Poppins Regular" size="24.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="79.0" layoutY="547.0" text="Bebas Asap Rokok" textFill="#533722">
+                     <font>
+                        <Font name="Poppins Regular" size="24.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="30.0" fitWidth="24.0" layoutX="41.0" layoutY="552.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@image/icon/smoke_free.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="30.0" fitWidth="24.0" layoutX="42.0" layoutY="513.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@image/icon/Ruller.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="30.0" fitWidth="24.0" layoutX="39.0" layoutY="598.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@image/icon/Vector-1.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="35.0" fitWidth="35.0" layoutX="37.0" layoutY="639.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@image/icon/AC.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="29.0" fitWidth="30.0" layoutX="174.0" layoutY="598.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@image/icon/water_heater.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="72.0" layoutY="604.0" text="Shower" textFill="#9c9c9c">
+                     <font>
+                        <Font name="Poppins SemiBold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="79.0" layoutY="648.0" text="AC" textFill="#9c9c9c">
+                     <font>
+                        <Font name="Poppins SemiBold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="209.0" layoutY="605.0" text="Air Panas" textFill="#9c9c9c">
+                     <font>
+                        <Font name="Poppins SemiBold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Button layoutX="64.0" layoutY="693.0" mnemonicParsing="false" onAction="#switchToReservasiDataKamar" style="-fx-background-color: white; -fx-background-radius: 10; -fx-border-color: #533722; -fx-border-width: 5; -fx-border-radius: 10;" text="Lihat Detail Kamar">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Line endX="1276.626220703125" endY="-6.103515625E-5" layoutX="55.0" layoutY="754.0" startX="-19.373790740966797" startY="-6.103515625E-5" />
+               </children>
+            </AnchorPane>
+         </children>
+      </HBox>
+   </center>
+</BorderPane>

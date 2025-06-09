@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="870.0" prefWidth="1440.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.santarahotel.homeController">
+   <top>
+      <Pane prefHeight="100.0" prefWidth="1440.0" style="-fx-background-color: #533722;" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="79.0" fitWidth="112.0" layoutX="15.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@image/logo/logo.png" />
+               </image></ImageView>
+            <Label layoutX="76.0" layoutY="25.0" text="ANTARA" textFill="WHITE">
+               <font>
+                  <Font size="48.0" />
+               </font>
+            </Label>
+            <MenuBar layoutX="1002.0" layoutY="39.0" scaleX="2.0" scaleY="2.0" style="-fx-background-color: #533722;">
+              <menus>
+                <Menu mnemonicParsing="false" style="-fx-text-fill: white;">
+                     <graphic>
+                        <Label text="▼ ABOUT" textFill="WHITE" />
+                     </graphic>
+                     <items>
+                        <MenuItem mnemonicParsing="false" onAction="#swithToAboutCompany" text="Our company" />
+                        <MenuItem mnemonicParsing="false" onAction="#switchToBiodata" text="Biodata" />
+                     </items>
+                </Menu>
+                <Menu mnemonicParsing="false">
+                     <graphic>
+                        <Label text="▼ ORDER STATUS" textFill="WHITE" />
+                     </graphic>
+                     <items>
+                        <MenuItem fx:id="MenuSearchID" mnemonicParsing="false" onAction="#switchToCekPesanan" text="Check based on ID" />
+                        <MenuItem fx:id="MenuSearchName" mnemonicParsing="false" onAction="#switchToCekPesanan" text="Check based on Name" />
+                     </items>
+                </Menu>
+                <Menu mnemonicParsing="false">
+                  <items>
+                    <MenuItem fx:id="Standard" mnemonicParsing="false" onAction="#switchToReservasi" text="Standard" />
+                        <MenuItem fx:id="Premium" mnemonicParsing="false" onAction="#switchToReservasi" text="Premium" />
+                        <MenuItem fx:id="Deluxe" mnemonicParsing="false" onAction="#switchToReservasi" text="Deluxe" />
+                  </items>
+                     <graphic>
+                        <Label text="▼ RESERVATION" textFill="WHITE" />
+                     </graphic>
+                </Menu>
+              </menus>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </MenuBar>
+         </children>
+      </Pane>
+   </top>
+   <center>
+      <StackPane BorderPane.alignment="CENTER">
+         <children>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" styleClass="home-background" stylesheets="@style.css" />
+            <VBox alignment="CENTER" spacing="10.0">
+               <children>
+                  <Label text="Selamat Datang di Santara" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Label>
+                  <Label text="Pesan Kamar Terbaik dengan Mudah dan Cepat" textFill="WHITE">
+                     <font>
+                        <Font name="System Italic" size="14.0" />
+                     </font>
+                  </Label>
+                  <StackPane>
+                     <children>
+                        <HBox alignment="CENTER" maxWidth="434.0" opacity="0.68" prefHeight="38.0" prefWidth="434.0" style="-fx-background-color: #2e1e13; -fx-background-radius: 15;" />
+                        <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Nikmati pengalaman memesan hotel yang nyaman, cepat, dan terpercaya." textAlignment="CENTER" wrappingWidth="401.62738037109375" />
+                     </children>
+                  </StackPane>
+                  <Button mnemonicParsing="false" onAction="#showGuidance" style="-fx-background-color: #533722;" text="Panduan Pemesanan" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </VBox>
+            <StackPane fx:id="pane_guidance" disable="true" prefHeight="150.0" prefWidth="200.0" visible="false">
+               <children>
+                  <Pane maxHeight="500.0" maxWidth="500.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white; -fx-background-radius: 15; -fx-border-color: #533722; -fx-border-width: 10; -fx-border-radius: 10;">
+                     <children>
+                        <Label layoutX="34.0" layoutY="25.0" text="Scan QR ini untuk mengakses panduan melalui website kami">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <Button layoutX="458.0" layoutY="20.0" mnemonicParsing="false" onAction="#hideGuidance" style="-fx-background-color: #533722;" text="X" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                        <ImageView fitHeight="309.0" fitWidth="348.0" layoutX="101.0" layoutY="110.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@image/QR_guidance.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+               </children>
+            </StackPane>
+         </children>
+      </StackPane>
+   </center>
+</BorderPane>

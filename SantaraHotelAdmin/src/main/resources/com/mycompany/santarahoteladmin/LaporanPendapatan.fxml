@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="870.0" prefWidth="1440.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.santarahoteladmin.LaporanPendapatanController">
+   <left>
+      <Pane fx:id="sidenavbar" prefHeight="870.0" prefWidth="328.0" style="-fx-background-color: #533722;" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="79.0" fitWidth="112.0" layoutX="26.0" layoutY="40.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@image/logo/logo.png" />
+               </image>
+            </ImageView>
+            <Button layoutX="90.0" layoutY="51.0" mnemonicParsing="false" style="-fx-background-color: #533722;" text="ANTARA" textFill="WHITE">
+               <font>
+                  <Font size="48.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <padding>
+                  <Insets bottom="-1.0" />
+               </padding>
+            </Button>
+            <Button layoutX="32.0" layoutY="312.0" mnemonicParsing="false" onAction="#switchToKonfirmasiPesanan" styleClass="nav-button" stylesheets="@style.css" text="Konfirmasi Pesanan" textAlignment="CENTER" textFill="#533722">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button layoutX="32.0" layoutY="412.0" mnemonicParsing="false" onAction="#switchToHistoriPesanan" styleClass="nav-button" stylesheets="@style.css" text="Riwayat Pemesanan" textAlignment="CENTER" textFill="#533722">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button layoutX="29.0" layoutY="519.0" mnemonicParsing="false" onAction="#switchToLaporanPendapatan" styleClass="nav-button" stylesheets="@style.css" text="Laporan Pendapatan" textAlignment="CENTER" textFill="#533722">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+         </children>
+      </Pane>
+   </left>
+   <center>
+      <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-icolor: #eaeaea;" BorderPane.alignment="CENTER">
+         <children>
+            <Button layoutX="12.0" layoutY="38.0" mnemonicParsing="false" onAction="#navbar" style="-fx-background-color: rgb(0,0,0,0);">
+               <graphic>
+                  <ImageView blendMode="DARKEN" fitHeight="102.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@image/icon/navbar_burger.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Label layoutX="95.0" layoutY="48.0" text="Laporan Pendapatan" textFill="#533722">
+               <font>
+                  <Font name="System Bold" size="36.0" />
+               </font>
+            </Label>
+            <LineChart fx:id="lineChart_revenueStream" layoutX="70.0" layoutY="158.0" legendVisible="false">
+              <xAxis>
+                <CategoryAxis label="Bulan" side="BOTTOM" />
+              </xAxis>
+              <yAxis>
+                <NumberAxis label="Pendapatan" minorTickCount="50" side="LEFT" upperBound="1000.0" />
+              </yAxis>
+            </LineChart>
+            <Label layoutX="654.0" layoutY="118.0" text="Pendapatan bulan ini:">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <Label fx:id="label_revenueThisMonth" layoutX="652.0" layoutY="156.0" styleClass="pane_background" stylesheets="@style.css" text="Rp. 15.090.000,00">
+               <font>
+                  <Font name="System Italic" size="24.0" />
+               </font>
+               <padding>
+                  <Insets left="10.0" right="10.0" />
+               </padding>
+            </Label>
+            <Label layoutX="654.0" layoutY="338.0" text="Pendapatan bulan lalu:">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <Label fx:id="label_revenueLastMonth" layoutX="652.0" layoutY="376.0" styleClass="pane_background" stylesheets="@style.css" text="Rp. 15.090.000,00">
+               <font>
+                  <Font name="System Italic" size="24.0" />
+               </font>
+               <padding>
+                  <Insets left="10.0" right="10.0" />
+               </padding>
+            </Label>
+            <Label layoutX="654.0" layoutY="228.0" text="Pelanggan check-in bulan ini">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <Label fx:id="label_countPeopleThisMonth" layoutX="652.0" layoutY="266.0" styleClass="pane_background" stylesheets="@style.css" text="300 Orang">
+               <font>
+                  <Font name="System Italic" size="24.0" />
+               </font>
+               <padding>
+                  <Insets left="10.0" right="10.0" />
+               </padding>
+            </Label>
+            <Label layoutX="654.0" layoutY="458.0" text="Pelanggan check-in bulan lalu">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <Label fx:id="label_countPeopleLastMonth" layoutX="652.0" layoutY="496.0" styleClass="pane_background" stylesheets="@style.css" text="300 Orang">
+               <font>
+                  <Font name="System Italic" size="24.0" />
+               </font>
+               <padding>
+                  <Insets left="10.0" right="10.0" />
+               </padding>
+            </Label>
+            <Label layoutX="268.0" layoutY="649.0" text="Total Pendapatan Yang Dikumpulkan Dari Awal Berdiri">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <Label fx:id="label_totalPendapatan" alignment="CENTER" layoutX="261.0" layoutY="696.0" prefHeight="51.0" prefWidth="582.0" styleClass="pane_background" stylesheets="@style.css" text="Rp. 30.180.000,00" textAlignment="CENTER">
+               <font>
+                  <Font name="System Bold Italic" size="24.0" />
+               </font>
+               <padding>
+                  <Insets left="10.0" right="10.0" />
+               </padding>
+            </Label>
+            <Button layoutX="452.0" layoutY="776.0" mnemonicParsing="false" onAction="#switchToLaporanPendapatan" prefHeight="34.0" prefWidth="205.0" style="-fx-background-color: #533722; -fx-border-radius: 10;" text="Refresh" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Button>
+            <HBox layoutX="230.0" layoutY="143.0">
+               <children>
+                  <Label text="Grafik pendapatan tahun ">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="label_tahun" layoutX="10.0" layoutY="10.0" text="2025">
+                     <font>
+                        <Font name="System Bold Italic" size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+               <padding>
+                  <Insets left="10.0" right="10.0" />
+               </padding>
+            </HBox>
+            <ComboBox fx:id="comboBox_tahun" layoutX="355.0" layoutY="552.0" onAction="#changeChartYear" prefWidth="150.0" promptText="2025" />
+            <Label layoutX="188.0" layoutY="556.0" text="Lihat grafik untuk tahun :">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+   </center>
+</BorderPane>

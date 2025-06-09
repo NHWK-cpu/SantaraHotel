@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="870.0" prefWidth="1440.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.santarahotel.aboutController">
+   <top>
+      <Pane prefHeight="100.0" prefWidth="1440.0" style="-fx-background-color: #533722;" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="79.0" fitWidth="112.0" layoutX="15.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@image/logo/logo.png" />
+               </image></ImageView>
+            <Label layoutX="76.0" layoutY="25.0" text="ANTARA" textFill="WHITE">
+               <font>
+                  <Font size="48.0" />
+               </font>
+            </Label>
+            <MenuBar layoutX="1002.0" layoutY="39.0" scaleX="2.0" scaleY="2.0" style="-fx-background-color: #533722;">
+              <menus>
+                <Menu mnemonicParsing="false" style="-fx-text-fill: white;">
+                     <graphic>
+                        <Label text="▼ ABOUT" textFill="WHITE" />
+                     </graphic>
+                     <items>
+                        <MenuItem mnemonicParsing="false" onAction="#swithToAboutCompany" text="Our company" />
+                        <MenuItem mnemonicParsing="false" onAction="#switchToBiodata" text="App Credit" />
+                     </items>
+                </Menu>
+                <Menu mnemonicParsing="false">
+                     <graphic>
+                        <Label text="▼ ORDER STATUS" textFill="WHITE" />
+                     </graphic>
+                     <items>
+                        <MenuItem fx:id="MenuSearchID" mnemonicParsing="false" onAction="#switchToCekPesanan" text="Check based on ID" />
+                        <MenuItem fx:id="MenuSearchName" mnemonicParsing="false" onAction="#switchToCekPesanan" text="Check based on Name" />
+                     </items>
+                </Menu>
+                <Menu mnemonicParsing="false">
+                  <items>
+                    <MenuItem fx:id="Standard" mnemonicParsing="false" onAction="#switchToReservasi" text="Standard" />
+                        <MenuItem fx:id="Premium" mnemonicParsing="false" onAction="#switchToReservasi" text="Premium" />
+                        <MenuItem fx:id="Deluxe" mnemonicParsing="false" onAction="#switchToReservasi" text="Deluxe" />
+                  </items>
+                     <graphic>
+                        <Label text="▼ RESERVATION" textFill="WHITE" />
+                     </graphic>
+                </Menu>
+              </menus>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </MenuBar>
+         </children>
+      </Pane>
+   </top>
+   <center>
+      <Pane prefHeight="200.0" prefWidth="200.0" styleClass="about_ng" stylesheets="@style.css" BorderPane.alignment="CENTER">
+         <children>
+            <Text fill="WHITE" layoutX="161.0" layoutY="93.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hotel Santara hadir untuk menghadirkan kenyamanan seperti di rumah, meski Anda sedang jauh dari rumah. Dengan layanan ramah, fasilitas lengkap, dan suasana hangat, kami berkomitmen memberikan pengalaman menginap yang tenang dan menyenangkan bagi setiap tamu. Unduh aplikasi kami untuk kemudahan reservasi, informasi kamar, dan penawaran eksklusif lainnya." textAlignment="CENTER" wrappingWidth="1115.931884765625">
+               <font>
+                  <Font name="Tahoma" size="24.0" />
+               </font>
+            </Text>
+            <VBox layoutX="74.0" layoutY="285.0" prefWidth="614.0">
+               <children>
+                  <Pane prefWidth="614.0">
+                     <children>
+                        <ImageView fitHeight="55.0" fitWidth="49.0" layoutX="5.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@image/bed.png" />
+                           </image>
+                        </ImageView>
+                        <Label layoutX="76.0" layoutY="6.0" text="Kamar Nyaman &amp; Bersih" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <Text fill="WHITE" layoutX="80.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dirancang dengan desain modern dan suasana hangat, lengkap dengan tempat tidur empuk, pencahayaan lembut, dan kebersihan yang selalu terjaga." wrappingWidth="536.6023559570312" />
+                     </children>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                     <padding>
+                        <Insets bottom="10.0" />
+                     </padding>
+                  </Pane>
+                  <Pane layoutX="10.0" layoutY="10.0" prefWidth="614.0">
+                     <children>
+                        <ImageView fitHeight="55.0" fitWidth="49.0" layoutX="5.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@image/online.png" />
+                           </image>
+                        </ImageView>
+                        <Label layoutX="76.0" layoutY="6.0" text="Wi-Fi Cepat &amp; Gratis" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <Text fill="WHITE" layoutX="80.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tetap terhubung tanpa hambatan, baik untuk bekerja maupun bersantai." wrappingWidth="536.6023559570312" />
+                     </children>
+                     <padding>
+                        <Insets bottom="10.0" />
+                     </padding>
+                  </Pane>
+                  <Pane layoutX="10.0" layoutY="76.0" prefWidth="614.0">
+                     <children>
+                        <ImageView fitHeight="55.0" fitWidth="49.0" layoutX="5.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@image/breakfast.png" />
+                           </image>
+                        </ImageView>
+                        <Label layoutX="76.0" layoutY="6.0" text=" Layanan Sarapan &amp; Minuman Hangat" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <Text fill="WHITE" layoutX="80.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nikmati sarapan lezat setiap pagi serta teh dan kopi yang selalu tersedia untuk Anda." wrappingWidth="536.6023559570312" />
+                     </children>
+                     <padding>
+                        <Insets bottom="10.0" />
+                     </padding>
+                  </Pane>
+                  <Pane layoutX="10.0" layoutY="138.0" prefWidth="614.0">
+                     <children>
+                        <ImageView fitHeight="55.0" fitWidth="49.0" layoutX="5.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@image/bathroom.png" />
+                           </image>
+                        </ImageView>
+                        <Label layoutX="76.0" layoutY="6.0" text="Kamar Mandi Pribadi dengan Air Panas" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <Text fill="WHITE" layoutX="80.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Relaksasi maksimal setelah hari yang panjang dengan air panas dan perlengkapan mandi lengkap." wrappingWidth="536.6023559570312" />
+                     </children>
+                     <padding>
+                        <Insets bottom="10.0" />
+                     </padding>
+                  </Pane>
+                  <Pane layoutX="10.0" layoutY="197.0" prefWidth="614.0">
+                     <children>
+                        <ImageView fitHeight="55.0" fitWidth="49.0" layoutX="5.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@image/customer-service.png" />
+                           </image>
+                        </ImageView>
+                        <Label layoutX="76.0" layoutY="6.0" text="Resepsionis 24 Jam" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <Text fill="WHITE" layoutX="80.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tim kami siap membantu kapan saja, dengan layanan ramah dan profesional." wrappingWidth="536.6023559570312" />
+                     </children>
+                     <padding>
+                        <Insets bottom="10.0" />
+                     </padding>
+                  </Pane>
+               </children>
+            </VBox>
+            <Label layoutX="78.0" layoutY="248.0" text="Kami menawarkan fasilitas unggulan untuk meningkatkan kenyamanan anda seperti:" textFill="WHITE">
+               <font>
+                  <Font name="Tahoma" size="24.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+   </center>
+</BorderPane>

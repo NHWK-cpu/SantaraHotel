@@ -1,0 +1,17 @@
+.nav-button {
+    -fx-background-color: white;
+    -fx-background-radius: 15;
+}
+
+.nav-button:hover {
+    -fx-effect: innershadow( gaussian, rgba( 0, 0, 0, 0.5 ), 10, 0, 5, 5 );
+}
+
+.pane_background {
+ 
+    -fx-background-color: linear-gradient(to right, #ffffff, #ffebce);
+    -fx-border-width: 2px 2px 2px 2px;
+    -fx-background-radius: 10px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.4), 10, 0, 0, 0);
+
+}

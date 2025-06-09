@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="870.0" prefWidth="1440.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.santarahoteladmin.homeController">
+   <left>
+      <Pane fx:id="sidenavbar" prefHeight="870.0" prefWidth="328.0" style="-fx-background-color: #533722;" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="79.0" fitWidth="112.0" layoutX="26.0" layoutY="40.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@image/logo/logo.png" />
+               </image>
+            </ImageView>
+            <Button layoutX="90.0" layoutY="51.0" mnemonicParsing="false" style="-fx-background-color: #533722;" text="ANTARA" textFill="WHITE">
+               <font>
+                  <Font size="48.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <padding>
+                  <Insets bottom="-1.0" />
+               </padding>
+            </Button>
+            <Button layoutX="32.0" layoutY="312.0" mnemonicParsing="false" onAction="#switchToKonfirmasiPesanan" styleClass="nav-button" stylesheets="@style.css" text="Konfirmasi Pesanan" textAlignment="CENTER" textFill="#533722">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button layoutX="32.0" layoutY="412.0" mnemonicParsing="false" onAction="#switchToHistoriPesanan" styleClass="nav-button" stylesheets="@style.css" text="Riwayat Pemesanan" textAlignment="CENTER" textFill="#533722">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button layoutX="29.0" layoutY="519.0" mnemonicParsing="false" onAction="#switchToLaporanPendapatan" styleClass="nav-button" stylesheets="@style.css" text="Laporan Pendapatan" textAlignment="CENTER" textFill="#533722">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+         </children>
+      </Pane>
+   </left>
+   <center>
+      <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-icolor: white;" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView blendMode="DARKEN" fitHeight="52.0" fitWidth="44.0" layoutX="24.0" layoutY="317.0" pickOnBounds="true" preserveRatio="true" rotate="180.0">
+               <image>
+                  <Image url="@image/icon/arrow.png" />
+               </image>
+            </ImageView>
+            <Text layoutX="82.0" layoutY="347.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Konfirmasi pesanan customer yang sudah membayar di sini">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Text>
+            <Button layoutX="12.0" layoutY="38.0" mnemonicParsing="false" onAction="#navbar" style="-fx-background-color: rgb(0,0,0,0);">
+               <graphic>
+                  <ImageView blendMode="DARKEN" fitHeight="102.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@image/icon/navbar_burger.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Label layoutX="95.0" layoutY="48.0" text="Panduan" textFill="#533722">
+               <font>
+                  <Font name="System Bold" size="36.0" />
+               </font>
+            </Label>
+            <ImageView blendMode="DARKEN" fitHeight="52.0" fitWidth="44.0" layoutX="27.0" layoutY="419.0" pickOnBounds="true" preserveRatio="true" rotate="180.0">
+               <image>
+                  <Image url="@image/icon/arrow.png" />
+               </image>
+            </ImageView>
+            <Text layoutX="85.0" layoutY="449.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cek semua pesanan customer">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Text>
+            <ImageView blendMode="DARKEN" fitHeight="52.0" fitWidth="44.0" layoutX="32.0" layoutY="526.0" pickOnBounds="true" preserveRatio="true" rotate="180.0">
+               <image>
+                  <Image url="@image/icon/arrow.png" />
+               </image>
+            </ImageView>
+            <Text layoutX="90.0" layoutY="556.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Grafis pendapatan kotor hotel">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Text>
+         </children>
+      </Pane>
+   </center>
+</BorderPane>
