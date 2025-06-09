@@ -1,14 +1,12 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package com.mycompany.santarahoteladmin;
 
 /**
- *
- * @author MyBook Hype AMD
+ * Class yang bertindak sebagai object reference dalam penyimpanan data dari database ke excel
  */
 public class Customer {
+    
+    // Semua data yang harus masuk pada object meliputi variabel di bawah ini
     private String nama;
     private String email;
     private String noTelp;

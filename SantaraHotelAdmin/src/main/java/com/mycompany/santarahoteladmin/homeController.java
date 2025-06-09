@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package com.mycompany.santarahoteladmin;
 
 import java.io.IOException;
@@ -17,7 +14,7 @@ import javafx.util.Duration;
 
 /**
  *
- * @author MyBook Hype AMD
+ * Class controller untuk menangani navigasi yang dilakukan pada scene home atau landing page saat aplikasi dijalankan pertamakali
  */
 public class homeController {
     @FXML

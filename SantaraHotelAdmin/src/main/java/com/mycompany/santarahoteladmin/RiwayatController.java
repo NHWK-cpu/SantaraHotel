@@ -37,15 +37,22 @@ import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
+/**
+ * Controller untuk halaman riwayat/histori pemesanan admin
+ */
+
 public class RiwayatController {
+    // Komponen UI sidebar
     @FXML
     private Pane sidenavbar;
     
+    // Method untuk menampilkan/sembunyikan sidebar
     @FXML
     private void navbar() {
         navslider.slide_navbar(sidenavbar);
     }
     
+// Method untuk navigasi antar halaman
     @FXML
     private void switchToKonfirmasiPesanan(ActionEvent event) throws IOException {
         SceneController.switchSceneKonfirmasiPesanan(event);
@@ -62,39 +69,35 @@ public class RiwayatController {
     }
     
     
-    // fungsi riwayat
+// Fungsi utama riwayat
     
+    // Format untuk menampilkan angka dengan separator
     private DecimalFormat stringFormatterSeparator = new DecimalFormat("#,###");
     
+    // Alert untuk menampilkan pesan error/success
     private alertMessage alert = new alertMessage();
     
+    // Komponen UI untuk pencarian data
     @FXML
     private ComboBox comboBox_SearchIndex;
-
     @FXML
     private ComboBox comboBox_statusPesanan;
-
     @FXML
     private ComboBox comboBox_tipeKamar;
-
     @FXML
     private DatePicker datePicker_tanggalCheckIn;
-
     @FXML
     private DatePicker datePicker_tanggalCheckOut;
-    
     @FXML
     private TableView<Customer> table_dataDisplay;
-
     @FXML
     private TextField textField_ID;
-
     @FXML
     private TextField textField_email;
-
     @FXML
     private TextField textField_nama;
     
+    // Kolom-kolom tabel
     @FXML
     private TableColumn<Customer, String> colNama;
     @FXML
@@ -118,19 +121,23 @@ public class RiwayatController {
     @FXML
     private TableColumn<Customer, String> colHarga;
     
+    // Inisialisasi komponen saat controller dimuat
     @FXML
     public void initialize() {
+        // Mengisi ComboBox dengan pilihan pencarian
         ObservableList<String> searchIndex = FXCollections.observableArrayList("ID", "Information");
         comboBox_SearchIndex.setItems(searchIndex);
         
+        // Mengisi ComboBox dengan status pesanan
         ObservableList<String> statusPesanan = FXCollections.observableArrayList("Belum dibayar", "Terbayar", "Ditempati", "Check out");
         comboBox_statusPesanan.setItems(statusPesanan);
         
+        // Mengisi ComboBox dengan tipe kamar
         ObservableList<String> tipeKamar = FXCollections.observableArrayList("standar", "premium", "deluxe");
         comboBox_tipeKamar.setItems(tipeKamar);
         
         
-        // Inisialisasi kolom
+        // Inisialisasi kolom tabel dengan properti Customer
         colNama.setCellValueFactory(new PropertyValueFactory<>("nama"));
         colEmail.setCellValueFactory(new PropertyValueFactory<>("email"));
         colNoTelp.setCellValueFactory(new PropertyValueFactory<>("noTelp"));
@@ -144,15 +151,21 @@ public class RiwayatController {
         colHarga.setCellValueFactory(new PropertyValueFactory<>("harga"));
     }
     
+    /**
+     * Method untuk mengubah tampilan form pencarian berdasarkan pilihan metode pencarian
+     */
     @FXML
     private void searchBy(ActionEvent event) {
         if (comboBox_SearchIndex.getValue().equals("ID")) {
+            // Mode pencarian dengan ID - sembunyikan field lainnya
             comboBox_statusPesanan.setVisible(false);
             comboBox_tipeKamar.setVisible(false);
             datePicker_tanggalCheckIn.setVisible(false);
             datePicker_tanggalCheckOut.setVisible(false);
             textField_email.setVisible(false);
             textField_nama.setVisible(false);
+            
+            // Nonaktifkan field yang tidak digunakan
             comboBox_statusPesanan.setDisable(true);
             comboBox_tipeKamar.setDisable(true);
             datePicker_tanggalCheckIn.setDisable(true);
@@ -160,18 +173,23 @@ public class RiwayatController {
             textField_email.setDisable(true);
             textField_nama.setDisable(true);
             
+            // Tampilkan dan aktifkan field ID
             textField_ID.setVisible(true);
             textField_ID.setDisable(false);
         } else {
+            // Mode pencarian dengan informasi lengkap - sembunyikan field ID
             textField_ID.setVisible(false);
             textField_ID.setDisable(true);
             
+            // Tampilkan field pencarian lengkap
             comboBox_statusPesanan.setVisible(true);
             comboBox_tipeKamar.setVisible(true);
             datePicker_tanggalCheckIn.setVisible(true);
             datePicker_tanggalCheckOut.setVisible(true);
             textField_email.setVisible(true);
             textField_nama.setVisible(true);
+            
+            // Aktifkan semua field pencarian
             comboBox_statusPesanan.setDisable(false);
             comboBox_tipeKamar.setDisable(false);
             datePicker_tanggalCheckIn.setDisable(false);
@@ -181,11 +199,16 @@ public class RiwayatController {
         }
     }
     
+    
+    /**
+     * Method untuk mencari data pesanan berdasarkan parameter yang dipilih
+     */
     @FXML
     private void cariData(ActionEvent event) {
         String stringQuery = "SELECT * FROM `customer` WHERE 1=1";
         Connection connect = ConnectionDB.ConnectDb();
         
+        // Pencarian berdasarkan ID
         if (!(textField_ID.isDisable() && textField_ID.getText().isEmpty())) {
             // cari berdasarkan id
             
@@ -197,6 +220,8 @@ public class RiwayatController {
                 
                 ResultSet result = prepare.executeQuery();
                 ObservableList<Customer> data = FXCollections.observableArrayList();
+                
+                // Memproses hasil query
                 while (result.next()) {
                     String nama = result.getString("nama");
                     String email = result.getString("email");
@@ -210,7 +235,7 @@ public class RiwayatController {
                     String varian = result.getString("varian_kamar");
                     String harga = "Rp. " + stringFormatterSeparator.format(Integer.parseInt(result.getString("harga"))).replace(",", ".") + ".000";
                     
-                    // Membuat objek Customer
+                    // Membuat objek Customer dari hasil query
                     Customer customer = new Customer(nama, email, harga, no_telepon, tgl_checkIn, tgl_checkOut, tipe, no_kamar, status, id, varian);
                     data.add(customer);
                 }
@@ -219,11 +244,14 @@ public class RiwayatController {
             } catch (Exception e) {
                 System.out.println(e);
             }
-            
+        
+        // Pencarian berdasarkan kriteria lain
         } else if (!(textField_email.getText().isEmpty()) || !(textField_nama.getText().isEmpty()) || datePicker_tanggalCheckIn.getValue() != null 
                 || datePicker_tanggalCheckOut.getValue() != null || !(comboBox_statusPesanan.getSelectionModel().isEmpty()) || !(comboBox_tipeKamar.getSelectionModel().isEmpty())) {
             // cari berdasarkan kriteria
             List<Object> parameters = new ArrayList<>();
+            
+        // Membangun query dinamis berdasarkan parameter yang diisi
             if (!(textField_nama.getText().isEmpty())) {
                 stringQuery += " AND nama LIKE ?";
                 parameters.add("%" + textField_nama.getText() + "%");
@@ -254,18 +282,18 @@ public class RiwayatController {
                 parameters.add(comboBox_statusPesanan.getValue().toString());
             }
             
-//            System.out.println(stringQuery + "   " + parameters.get(0));
-            
             try {
                 PreparedStatement prepare = connect.prepareStatement(stringQuery);
                 
+                // Mengisi parameter query
                 for (int i = 0; i < parameters.size(); i++) {
                     prepare.setObject(i +1, parameters.get(i));
                 }
                 
                 ResultSet result = prepare.executeQuery();
-                
                 ObservableList<Customer> data = FXCollections.observableArrayList();
+                
+                // Memproses hasil query
                 while (result.next()) {
                     String nama = result.getString("nama");
                     String email = result.getString("email");
@@ -279,7 +307,7 @@ public class RiwayatController {
                     String varian = result.getString("varian_kamar");
                     String harga = "Rp. " + stringFormatterSeparator.format(Integer.parseInt(result.getString("harga"))).replace(",", ".") + ".000";
                     
-                    // Membuat objek Customer
+                    // Membuat objek Customer dari hasil query
                     Customer customer = new Customer(nama, email, harga, no_telepon, tgl_checkIn, tgl_checkOut, tipe, no_kamar, status, id, varian);
                     data.add(customer);
                 }
@@ -290,15 +318,23 @@ public class RiwayatController {
         } 
     }
     
+    /**
+     * Method untuk mereset form pencarian
+     */
     @FXML
     private void clearIndex(ActionEvent event) throws IOException {
         switchToHistoriPesanan(event);
     }
     
+    /**
+     * Method untuk mengekspor seluruh data tabel database ke Excel
+     */
     @FXML
     private void downloadEntireTable(ActionEvent event) {
         XSSFWorkbook wb = new XSSFWorkbook();
         XSSFSheet sheet = wb.createSheet("Customer");
+        
+        // Membuat header Excel
         XSSFRow header = sheet.createRow(0);
         header.createCell(0).setCellValue("Nama");
         header.createCell(1).setCellValue("Email");
@@ -312,6 +348,7 @@ public class RiwayatController {
         header.createCell(9).setCellValue("Varian");
         header.createCell(10).setCellValue("Harga");
         
+        // Query untuk mengambil semua data
         String stringQuery = "SELECT * FROM `customer`";
         Connection connect = ConnectionDB.ConnectDb();
         
@@ -320,6 +357,7 @@ public class RiwayatController {
             ResultSet result = prepare.executeQuery();
             int index = 1;
             
+            // Mengisi data ke Excel
             while(result.next()) {
                 XSSFRow row = sheet.createRow(index);
                 row.createCell(0).setCellValue(result.getString("nama"));
@@ -336,6 +374,7 @@ public class RiwayatController {
                 index++;
             }
         
+            // Menyimpan file Excel
             String fileName = LocalDate.now() + " DataLengkap_TabelPesanan.xlsx";
             FileOutputStream fileOut = new FileOutputStream(fileName);
             wb.write(fileOut);
@@ -348,8 +387,12 @@ public class RiwayatController {
         alert.successMessage("Seluruh Data Tabel Berhasil Diekspor");
     }
     
+    /**
+     * Method untuk mengekspor data yang sudah difilter dan tambil pada TableView ke Excel
+     */
     @FXML
     private void downloadFilteredTable(ActionEvent event) {
+        // Validasi jika tabel kosong
         if (table_dataDisplay.getItems().isEmpty()) {
             alert.errorMessage("Belum ada data yang terfilter");
             return;
@@ -358,6 +401,7 @@ public class RiwayatController {
         String fileName = LocalDate.now() + " DataFiltered_TabelPesanan.xlsx";
 
         try {
+            // Menggunakan ExcelExporter untuk mengekspor data
             ExcelExporter.exportTableViewToExcel(table_dataDisplay, fileName);
         } catch (IOException ex) {
             Logger.getLogger(RiwayatController.class.getName()).log(Level.SEVERE, null, ex);
@@ -365,8 +409,12 @@ public class RiwayatController {
         alert.successMessage("Data Tabel Terfilter Berhasil Diekspor");
     }
     
+    /**
+     * Method untuk mengimpor data dari Excel
+     */
     @FXML
     private void importData(ActionEvent event) {
+        // Membuka dialog pemilihan file
         FileChooser fileChooser = new FileChooser();
         fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("Excel Files", "*.xlsx", "*.xls"));
         File selectedFile = fileChooser.showOpenDialog(App.getStage());
@@ -377,8 +425,12 @@ public class RiwayatController {
         }
     }
     
+    
+    /**
+     * Method untuk memproses file Excel dan mengimpor datanya
+     * @param file File Excel yang akan diproses
+     */
     private void processExcelFile(File file) {
-
 
         try (Connection connection = ConnectionDB.ConnectDb()) {
             // Membaca file Excel
@@ -386,12 +438,15 @@ public class RiwayatController {
             Workbook workbook = new XSSFWorkbook(inputStream);
             Sheet sheet = workbook.getSheetAt(0);
 
+            // Query untuk insert data
             String query = "INSERT INTO `customer` (nama, email, nomor_telepon, tanggal_check_in, tanggal_check_out, tipe_kamar, nomor_kamar, status, id_pesanan, varian_kamar, harga) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
             PreparedStatement statement = connection.prepareStatement(query);
 
+            // Memproses setiap baris data
             for (Row row : sheet) {
                 if (row.getRowNum() == 0) continue; // Lewati header
 
+                // Membaca data dari Excel
                 String nama = row.getCell(0).getStringCellValue();
                 String email = row.getCell(1).getStringCellValue();
                 String no_telepon = row.getCell(2).getStringCellValue();
@@ -404,13 +459,14 @@ public class RiwayatController {
                 String varian = row.getCell(9).getStringCellValue();
                 int hargaInt = getIntHarga(row);
 
-                // Cek apakah data dengan ID sudah ada
+                // Cek apakah data dengan ID yang sama sudah ada
                 PreparedStatement checkStmt = connection.prepareStatement("SELECT COUNT(*) FROM `customer` WHERE id_pesanan = ?");
                 checkStmt.setString(1, id);
                 ResultSet rs = checkStmt.executeQuery();
                 rs.next();
                 int count = rs.getInt(1);
 
+                // Jika data belum ada, lakukan insert
                 if (count == 0) {
                     // Insert data
                     statement.setString(1, nama);
@@ -441,6 +497,11 @@ public class RiwayatController {
         }
     }
     
+    /**
+     * Method untuk mengkonversi format harga dari string ke integer
+     * @param row Baris data dari Excel
+     * @return Harga dalam bentuk integer
+     */
     private int getIntHarga(Row row) {
         String hargaString = (row.getCell(10).getStringCellValue()).replace(".", "").trim();
         int hargaInt = Integer.parseInt(hargaString.substring(3, hargaString.length() - 3));
