@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Menu?>
@@ -9,6 +8,7 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
@@ -66,115 +66,190 @@
       </Pane>
    </top>
    <center>
-      <Pane prefHeight="200.0" prefWidth="200.0" styleClass="about_ng" stylesheets="@style.css" BorderPane.alignment="CENTER">
+      <Pane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <Text fill="WHITE" layoutX="161.0" layoutY="93.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hotel Santara hadir untuk menghadirkan kenyamanan seperti di rumah, meski Anda sedang jauh dari rumah. Dengan layanan ramah, fasilitas lengkap, dan suasana hangat, kami berkomitmen memberikan pengalaman menginap yang tenang dan menyenangkan bagi setiap tamu. Unduh aplikasi kami untuk kemudahan reservasi, informasi kamar, dan penawaran eksklusif lainnya." textAlignment="CENTER" wrappingWidth="1115.931884765625">
+            <Text layoutX="103.0" layoutY="79.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hotel Santara hadir untuk menghadirkan kenyamanan seperti di rumah, meski Anda sedang jauh dari rumah. Dengan layanan ramah, fasilitas lengkap, dan suasana hangat, kami berkomitmen memberikan pengalaman menginap yang tenang dan menyenangkan bagi setiap tamu. Unduh aplikasi kami untuk kemudahan reservasi, informasi kamar, dan penawaran eksklusif lainnya." textAlignment="CENTER" wrappingWidth="1197.5319213867188">
                <font>
-                  <Font name="Tahoma" size="24.0" />
+                  <Font name="Tahoma" size="14.0" />
                </font>
             </Text>
-            <VBox layoutX="74.0" layoutY="285.0" prefWidth="614.0">
+            <HBox layoutX="53.0" layoutY="333.0" spacing="350.0">
                <children>
-                  <Pane prefWidth="614.0">
+                  <Pane>
                      <children>
-                        <ImageView fitHeight="55.0" fitWidth="49.0" layoutX="5.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@image/bed.png" />
-                           </image>
-                        </ImageView>
-                        <Label layoutX="76.0" layoutY="6.0" text="Kamar Nyaman &amp; Bersih" textFill="WHITE">
+                        <Label layoutX="47.0" layoutY="5.0" text="Fasilitas terdekat">
                            <font>
-                              <Font name="System Bold" size="14.0" />
+                              <Font name="System Bold" size="18.0" />
                            </font>
                         </Label>
-                        <Text fill="WHITE" layoutX="80.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dirancang dengan desain modern dan suasana hangat, lengkap dengan tempat tidur empuk, pencahayaan lembut, dan kebersihan yang selalu terjaga." wrappingWidth="536.6023559570312" />
+                        <ImageView fitHeight="35.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@image/icon/Vector.png" />
+                           </image>
+                        </ImageView>
+                        <VBox layoutX="45.0" layoutY="42.0" spacing="5.0">
+                           <children>
+                              <Label lineSpacing="20.0" text="ATM / Bank">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="10.0" layoutY="10.0" lineSpacing="20.0" text="Salon Kecantikan">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="10.0" layoutY="30.0" lineSpacing="20.0" text="Mini market">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="10.0" layoutY="50.0" lineSpacing="20.0" text="Salon rambut">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="10.0" layoutY="70.0" lineSpacing="20.0" text="Laundry">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="10.0" layoutY="90.0" lineSpacing="20.0" text="Toko">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="10.0" layoutY="110.0" lineSpacing="20.0" text="Supermarket">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </VBox>
                      </children>
-                     <VBox.margin>
-                        <Insets />
-                     </VBox.margin>
-                     <padding>
-                        <Insets bottom="10.0" />
-                     </padding>
                   </Pane>
-                  <Pane layoutX="10.0" layoutY="10.0" prefWidth="614.0">
+                  <Pane layoutX="10.0" layoutY="10.0">
                      <children>
-                        <ImageView fitHeight="55.0" fitWidth="49.0" layoutX="5.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@image/online.png" />
-                           </image>
-                        </ImageView>
-                        <Label layoutX="76.0" layoutY="6.0" text="Wi-Fi Cepat &amp; Gratis" textFill="WHITE">
+                        <Label layoutX="47.0" layoutY="5.0" text="Fasilitas Publik">
                            <font>
-                              <Font name="System Bold" size="14.0" />
+                              <Font name="System Bold" size="18.0" />
                            </font>
                         </Label>
-                        <Text fill="WHITE" layoutX="80.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tetap terhubung tanpa hambatan, baik untuk bekerja maupun bersantai." wrappingWidth="536.6023559570312" />
+                        <ImageView fitHeight="35.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@image/icon/mdi_building.png" />
+                           </image>
+                        </ImageView>
+                        <VBox layoutX="45.0" layoutY="42.0" spacing="5.0">
+                           <children>
+                              <Label lineSpacing="20.0" text="Area nparkir">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="10.0" layoutY="10.0" lineSpacing="20.0" text="Lift">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="10.0" layoutY="30.0" lineSpacing="20.0" text="Restoran">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="10.0" layoutY="50.0" lineSpacing="20.0" text="Restoran untuk sarapan">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="10.0" layoutY="70.0" lineSpacing="20.0" text="Wifi di area umum">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </VBox>
                      </children>
-                     <padding>
-                        <Insets bottom="10.0" />
-                     </padding>
                   </Pane>
-                  <Pane layoutX="10.0" layoutY="76.0" prefWidth="614.0">
+                  <Pane layoutX="601.0" layoutY="10.0">
                      <children>
-                        <ImageView fitHeight="55.0" fitWidth="49.0" layoutX="5.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@image/breakfast.png" />
-                           </image>
-                        </ImageView>
-                        <Label layoutX="76.0" layoutY="6.0" text=" Layanan Sarapan &amp; Minuman Hangat" textFill="WHITE">
+                        <Label layoutX="47.0" layoutY="5.0" text="Fasilitas Kamar">
                            <font>
-                              <Font name="System Bold" size="14.0" />
+                              <Font name="System Bold" size="18.0" />
                            </font>
                         </Label>
-                        <Text fill="WHITE" layoutX="80.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nikmati sarapan lezat setiap pagi serta teh dan kopi yang selalu tersedia untuk Anda." wrappingWidth="536.6023559570312" />
-                     </children>
-                     <padding>
-                        <Insets bottom="10.0" />
-                     </padding>
-                  </Pane>
-                  <Pane layoutX="10.0" layoutY="138.0" prefWidth="614.0">
-                     <children>
-                        <ImageView fitHeight="55.0" fitWidth="49.0" layoutX="5.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="35.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@image/bathroom.png" />
+                              <Image url="@image/icon/ic_baseline-meeting-room.png" />
                            </image>
                         </ImageView>
-                        <Label layoutX="76.0" layoutY="6.0" text="Kamar Mandi Pribadi dengan Air Panas" textFill="WHITE">
-                           <font>
-                              <Font name="System Bold" size="14.0" />
-                           </font>
-                        </Label>
-                        <Text fill="WHITE" layoutX="80.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Relaksasi maksimal setelah hari yang panjang dengan air panas dan perlengkapan mandi lengkap." wrappingWidth="536.6023559570312" />
+                        <VBox layoutX="45.0" layoutY="42.0" spacing="5.0">
+                           <children>
+                              <Label lineSpacing="20.0" text="Meja">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="10.0" layoutY="10.0" lineSpacing="20.0" text="Kulkas">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="10.0" layoutY="30.0" lineSpacing="20.0" text="Lemari es">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="10.0" layoutY="50.0" lineSpacing="20.0" text="Pancuran">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="10.0" layoutY="70.0" lineSpacing="20.0" text="TV">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </VBox>
                      </children>
-                     <padding>
-                        <Insets bottom="10.0" />
-                     </padding>
-                  </Pane>
-                  <Pane layoutX="10.0" layoutY="197.0" prefWidth="614.0">
-                     <children>
-                        <ImageView fitHeight="55.0" fitWidth="49.0" layoutX="5.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@image/customer-service.png" />
-                           </image>
-                        </ImageView>
-                        <Label layoutX="76.0" layoutY="6.0" text="Resepsionis 24 Jam" textFill="WHITE">
-                           <font>
-                              <Font name="System Bold" size="14.0" />
-                           </font>
-                        </Label>
-                        <Text fill="WHITE" layoutX="80.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tim kami siap membantu kapan saja, dengan layanan ramah dan profesional." wrappingWidth="536.6023559570312" />
-                     </children>
-                     <padding>
-                        <Insets bottom="10.0" />
-                     </padding>
                   </Pane>
                </children>
-            </VBox>
-            <Label layoutX="78.0" layoutY="248.0" text="Kami menawarkan fasilitas unggulan untuk meningkatkan kenyamanan anda seperti:" textFill="WHITE">
+            </HBox>
+            <Label layoutX="656.0" layoutY="28.0" text="Introduction">
                <font>
-                  <Font name="Tahoma" size="24.0" />
+                  <Font name="System Bold" size="18.0" />
                </font>
             </Label>
+            <HBox layoutX="50.0" layoutY="127.0" spacing="24.0">
+               <children>
+                  <ImageView fitHeight="173.0" fitWidth="272.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@image/image%2027.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="173.0" fitWidth="272.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@image/image%2028.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="173.0" fitWidth="272.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@image/image%2014.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="173.0" fitWidth="272.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@image/image.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="173.0" fitWidth="272.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@image/KamarDeluxe.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </HBox>
          </children>
       </Pane>
    </center>
