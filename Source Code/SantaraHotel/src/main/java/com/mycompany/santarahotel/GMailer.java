@@ -18,7 +18,7 @@ public class GMailer {
     // - messageString : isi pesan email
     // - recipient  : alamat email tujuan
     public void sendMail(String subject, String messageString, String recipient) {
-        Dotenv dotenv = Dotenv.configure().directory(".\\src\\main\\java\\com\\mycompany\\santarahotel\\").load(); // Untuk menyambungkan file .env 
+        Dotenv dotenv = Dotenv.configure().directory(".\\").load(); // Untuk menyambungkan file .env 
         
         final String username = dotenv.get("GMAIL_USER"); // Email yang digunakan sebagai pengirim
         final String password = dotenv.get("GMAIL_AUTH"); // Password autentikasi
