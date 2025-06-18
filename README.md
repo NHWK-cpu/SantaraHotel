@@ -2,6 +2,14 @@
 
 Santara adalah aplikasi berbasis java yang berfungsi untuk memudahkan proses reservasi pada hotel. Aplikasi ini bisa dijalankan di OS Windows, Linux, dan Mac dengan java [JDK 11](https://www.oracle.com/java/technologies/downloads/) keatas.
 
+## Fitur Andalan
+
+- Reservasi
+- Cek pesanan
+- Konfirmasi pesanan
+- Riwayat pemesanan
+- Detail pendapatan
+
 ## Instalasi
 
 ## Setup database
