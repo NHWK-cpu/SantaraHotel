@@ -67,3 +67,16 @@ Santara adalah aplikasi berbasis java yang berfungsi untuk memudahkan proses res
    Jika anda ingin menjalankan aplikasi untuk tampilan admin jalankan perintah berikut:
    `java --module-path ".\javafx-sdk-21.0.7\lib" --add-modules javafx.controls,javafx.fxml -jar SantaraHotelAdmin-1.0-SNAPSHOT.jar`
 3. Untuk menghentikan aplikasi anda bisa menekan `alt+f4` atau jika masih belum mati anda bisa tekan `ctrl+c` pada command prompt yang menjalankan aplikasi tadi.
+
+---
+
+## Development Requirement
+
+Sebelum memulai development anda perlu menyiapkan file .env yang berisi url database, user & password database, dan autentikasi gmail.
+
+Sebagai contoh anda dapat melihat file [.env ini](https://gist.github.com/NHWK-cpu/dfb7691edf0b8d0f49b4158c879954b3)
+
+- Isi value GMAIL_USER dan GMAIL_AUTH untuk autentikasi berdasarkan alamat gmail beserta password anda. Ini akan digunakan sebagai Email pengirim konfirmasi pesanan. [(untuk membuat App Password Pada gmail anda bisa mengikuti cara ini)](https://gist.github.com/NHWK-cpu/f78086c52fde7d6cbdaf78344220a19e)
+- Setelah anda membuat env anda bisa mencopy file tersebut pada folder SantaraHotel dan SantaraHotelAdmin pada direktori `Source Code`
+
+Jika saat menjalankan aplikasi yang sudah ter-deploy anda ingin menggunakan alamat email sendiri, anda bisa meng-copy file .env ini ke direktori `Deploy`
