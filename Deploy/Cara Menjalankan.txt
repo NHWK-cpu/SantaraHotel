@@ -1,0 +1,17 @@
+# Cara menjalankan
+  Catatan: Komputer anda harus sudah terinstall JDK java untuk menjalankan
+           Anda bisa melihat tutorial ini untuk instalasi JDK => https://youtu.be/3qC3MdyyXeY?si=Ox8_UgiCmDatv5Nq
+
+## Menjalankan dengan menggunakan run-app
+
+  - Jika anda ingin menjalankan aplikasi untuk admin maka anda bisa menjalankan run-app(ADMIN).bat
+  - Jika ingin menjalankan sisi customer maka jalankan run-app(CUSTOMER).bat
+
+## Menjalankan melalui command prompt
+
+  1. Buka command prompt lalu masuk ke path folder ini (folder deploy) dengan command "cd <path folder>"
+  2. Jika anda ingin menjalankan aplikasi untuk tampilan customer jalankan perintah berikut:
+       java --module-path ".\javafx-sdk-21.0.7\lib" --add-modules javafx.controls,javafx.fxml -jar SantaraHotel-1.0-SNAPSHOT.jar
+     Jika anda ingin menjalankan aplikasi untuk tampilan admin jalankan perintah berikut:
+       java --module-path ".\javafx-sdk-21.0.7\lib" --add-modules javafx.controls,javafx.fxml -jar SantaraHotelAdmin-1.0-SNAPSHOT.jar
+  3. Untuk menghentikan aplikasi anda bisa menekan alt+f4 atau jika masih belum mati anda bisa tekan ctrl+c pada command prompt yang menjalankan aplikasi tadi

@@ -1,0 +1,183 @@
+
+
+### Panduan untuk aplikasi Santara pada sisi customer ####
+## Aplikasi Yang Siap dijalankan Berada Pada Folder "SantahaHotel" >> "Deploy" ##
+
+
+》》》Cara reservasi di aplikasi santara《《《
+
+
+
+1. Pilih Jenis Kamar :
+
+- Pada kanan atas bilah navigasi, klik RESERVATION lalu pilih jenis kamar sesuai keinginan Anda.
+
+
+
+2. Lihat Detail Fasilitas Kamar :
+
+- Setelah anda memilih jenis kamar, akan muncul tampilan detail dari jenis spesifikasi yang anda pilih tadi.
+
+
+
+- Anda bisa melihat terlebih dahulu informasi dari fasilitas kamar yang kami sediakan dengan menekan tombol Lihat Detail Kamar di pojok kiri bawah.
+
+
+
+3. Pilih Layanan Kamar :
+
+- Setelah melihat detail kamar anda bisa kembali dengan men-klik tombol Lihat Pilihan Kamar.
+
+
+
+4. Isi Data yang Diperlukan :
+
+-Setelah memilih jenis layanan, anda akan disediakan form untuk data pesanan anda. Isi form tersebut dengan sebenar-benarnya agar memudahkan kami untuk memproses pesanan anda. Jika selesai klik tombol Pesan pada kanan bawah.
+
+
+
+5. Konfirmasi Pesanan :
+
+- Setelah memesan, Anda akan menerima E-mail pada alamat yang anda isikan sebelumnya yang berisi ID dari pesanan anda. Pesan E-mail biasanya akan masuk ke folder spam pada Gmail.
+
+
+
+- Kemudian, anda dapat langsung mengonfirmasi pesanan pada resepsionis secara offline di tanggal check-in yang sudah Anda tetapkan sebelumnya.
+
+
+
+
+
+》》》cara mengecek status pesanan yang telah dibuat《《《
+
+
+
+1. Klik ORDER STATUS lalu pilih cara
+
+memeriksa pesanan melalui pencarian berdasarkan nama (Check based on Name) atau berdasarkan ID ( Check based on ID )
+
+
+
+2. Mengecek berdasarkan ID :
+
+- Klik Check Based On ID, lalu isi form pencarian dengan mengetik Nomor ID pesanan sesuai notifikasi Gmail yang telah dikirim sebelumnya.
+
+
+
+3. Mengecek berdasarkan Nama :
+
+- Klik Check Based On Name, lalu isi form pencarian dengan mengetik nama atau alamat Gmail pesanan Anda sesuai data saat mengisi form reservasi sebelumnya.
+
+
+
+
+
+
+
+
+
+
+
+###Panduan untuk aplikasi pada sisi admin###
+
+
+
+》》》Cara mengonfirmasi pesanan pelanggan di aplikasi santara《《《
+
+
+
+1. Mencari Data Pesanan Pelanggan :
+
+- Klik Konfirmasi Pesanan lalu cari data pelanggan pada opsi panel information berdasarkan informasi umum atau ID pesanan pelanggan, kemudian mengetik kolom pencarian tertera sesuai data yang diminta pelanggan
+
+
+
+- tekan panel information lalu pilih salah satu opsi berdasarkan ID Pesanan atau informasi umum, kemudian ketik informasi tersebut untuk mengisi kotak form. Setelah mengisi klik Cari untuk menampilkan spesifikasi data pesanan yang ingin diperiksa melalui halaman pencarian Konfirmasi Pelanggan tadi berdasarkan informasi umum atau ID pesanan.
+
+
+
+2. Mengonfirmasi Status Pembayaran :
+
+- Setelah menemukan Data pesanan Klik pada panel sebelah kanan " Ubah Status Pesanan " lalu ubah menjadi salah satu dari ketiga opsi ( Terbayar, Check In, Check Out) sesuai keperluan agenda pelanggan saat menghampiri resepsionis.
+
+
+
+- Tombol Clear berfungsi untuk efektivitas menghapus keseluruhan kotak isi form apabila ada kesalahan waktu mencari identitas pelanggan.
+
+
+
+- Klik Konfirmasi untuk mengubah status apabila data pelanggan sesuai dan telah melakukan pengembalian kunci kamar atau sudah melakukan pembayaran langsung di meja resepsionis.
+
+
+
+
+
+
+
+###Cara melihat dan mengelola histori pesanan pelanggan di aplikasi santara###
+
+
+
+1. Mengecek Histori Pemesanan :
+
+- Klik Riwayat Pemesanan pada navigasi menu Admin Santara lalu pada panel information pilih salah satu opsi untuk mencari data riwayat pelanggan berdasarkan informasi umum atau ID Pesanan.
+
+
+
+- Tombol Clear berfungsi untuk efektivitas menghapus keseluruhan kotak isi form apabila ada kesalahan waktu mencari identitas pelanggan.
+
+
+
+- Setelah itu Klik tombol Cari untuk menampilkan hasil data yang sesuai anda inputkan tadi.
+
+
+
+
+
+2. Mencetak Histori Pemesanan :
+
+- Ketika sudah di halaman utama menu Histori Pemesanan. Klik Export untuk salah satu riwayat atau bisa keseluruhan dengan menekan tombol Export All, maka informasi dari seluruh riwayat pemesanan berhasil dicetak dalam bentuk dokumen berformat excel.
+
+
+
+3. Mengimport Riwayat Pemesanan :
+
+- Setelah sudah berada di halaman utama menu Histori Pemesanan. Klik Import untuk mensinkronisasikan data keseluruhan pelanggan sesuai dengan yang ada di database.
+
+
+
+
+
+
+
+
+
+》》》Cara mengoperasikan dan melihat data pendapatan di aplikasi santara 《《《
+
+
+
+
+
+1. Melihat Grafik Data Pendapatan :
+
+
+
+- Klik Laporan Pendapatan pada navigasi menu Admin Santara, lalu akan muncul halaman yang memperlihatkan grafik laporan pedapatan hotel secara detail sesuai spesifikasi antara waktu dan jumlah pendapatan berdasarkan kalkulasi pelangan yang berhasil check-in.
+
+
+
+2. Melihat Data Grafik Pendapatan Periode Lampau dan Masa Depan :
+
+
+
+- Setelah berhasil pada halaman yang memperilihatkan grafik laporan pendapatan hotel, Klik pada bagian panel yang tertuliskan tahun ini( 2025 ) di samping keterangan Lihat Grafik untuk Tahun, maka akan muncul opsi untuk mengubah angka tahun menjadi tahun yang berbeda untuk menganalisis laporan pendapatan pada masa historis maupun juga mengenai grafik proyeksi masa depan.
+
+
+
+
+
+3. Cara Memuat Ulang Grafik Laporan Pendapatan :
+
+
+
+- Klik tombol REFRESH pada halaman Laporan Pendapatan bagian bawah sendiri untuk memuat ulang grafik menjadi lebih relevan apabila ada perubahan data yang terjadi.
